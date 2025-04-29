@@ -20,9 +20,23 @@ const config: Config = {
         md: "2rem",
       },
     },
-    extend: {},
+    extend: {
+      animation: {
+        pulsegrid: "pulsegrid 8s ease-in-out infinite",
+      },
+      keyframes: {
+        pulsegrid: {
+          '0%, 100%': { opacity: '0.1', transform: 'translate(0, 0)' },
+          '50%': { opacity: '0.3', transform: 'translate(5px, 5px)' },
+        },
+      },
+      // Adding custom pseudo-element support
+      corePlugins: {
+        preflight: true, // Enables support for pseudo-elements
+      },
+    },
   },
   plugins: [],
 };
-export default config;
 
+export default config;
