@@ -6,7 +6,7 @@ export const Header = () => {
         <div className="flex justify-between items-center h-24 md:h-28">
           <div className=" flex  font-heading ml-12 text-4xl font-bold">
             <Scissors className=" w-10 h-10 text-blue-500 " />
-            <h1 className=" ml-6 " >Four Season </h1>
+            <h1 className=" ml-6 ">Four Season </h1>
           </div>
           <div className="flex items-center gap-4">
             {/* Links visible on large screens */}
@@ -15,7 +15,9 @@ export const Header = () => {
               <div className="hidden md:inline-flex">Location</div>
               <div className="hidden md:inline-flex">Studio Membership</div>
               <div className="hidden md:inline-flex">Contact Us</div>
-              <div className="hidden md:inline-flex">Book Now</div>
+              <div className="hidden md:inline-flex bg-white text-black  rounded-full py-2 px-6 hover:bg-black hover:text-white ">
+                Book Now
+              </div>
             </div>
           </div>
         </div>
