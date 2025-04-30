@@ -29,6 +29,28 @@ const config: Config = {
           '0%, 100%': { opacity: '0.1', transform: 'translate(0, 0)' },
           '50%': { opacity: '0.3', transform: 'translate(5px, 5px)' },
         },
+        "ping-large": {
+          "75%,100%": {
+            transform: "scale(3)",
+            opacity: "0",
+          },
+        },
+        "move-left": {
+          "0%": {
+            transform: "translateX(0%)",
+          },
+          "100%": {
+            transform: "translateX(-50%)",
+          },
+        },
+        "move-right": {
+          "0%": {
+            transform: "translateX(-50%)",
+          },
+          "100%": {
+            transform: "translateX(0%)",
+          },
+        },
       },
       // Adding custom pseudo-element support
       corePlugins: {
