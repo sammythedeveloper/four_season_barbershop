@@ -63,8 +63,8 @@ export const Service = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center py-4">
           {services.map((service, index) => (
             <div key={index} className="w-60 h-100 shadow-md text-center p-4">
+              <h3 className="m-6 text-lg font-semibold">{service.service}</h3>
               <service.image className="mx-auto w-16 h-16" /> {/* Render SVG component directly */}
-              <h3 className="mt-4 text-lg font-semibold">{service.service}</h3>
               <hr className="mt-2" />
               <p className="mt-4">{service.description}</p>
               <p className="mt-2 text-sm text-black ">{service.price}</p>
