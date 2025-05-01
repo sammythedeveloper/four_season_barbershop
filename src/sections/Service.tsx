@@ -20,7 +20,7 @@ const services = [
     description:
       "Treat yourself to a premium shave, where expert precision meets effortless smoothness.",
     price: "$25",
-    link: ""
+    link: "BOOK NOW"
   },
   {
     service: "SILK PRESS",
@@ -28,7 +28,7 @@ const services = [
     description:
       "A smooth, sleek, and bouncy straight style with the addition of a hydrating steam treatment for extra moisture and shine.",
     price: "$80",
-    link: ""
+    link: "BOOK NOW"
   },
   {
     service: "COSMETICS",
@@ -36,7 +36,7 @@ const services = [
     description:
       "High-end cosmetics artistry designed to enhance and define your natural beauty with sophistication.",
     price: "Hours & Prices Vary",
-    link: ""
+    link: "BOOK NOW"
   },
   {
     service: "BRAIDS",
@@ -44,7 +44,7 @@ const services = [
     description:
       "Elite grooming services tailored to refine and elevate your personal style.",
     price: "Hours & Prices Vary",
-    link: ""
+    link: "BOOK NOW"
   },
   {
     service: "VIP",
@@ -52,7 +52,7 @@ const services = [
     description:
       "A premium grooming experience with expert detailing, hot towel treatment, and personalized finishing touches.",
     price: "Hours & Prices Vary",
-    link: ""
+    link: "BOOK NOW"
   },
 ];
 
