@@ -1,4 +1,4 @@
-import { AboutSection } from "@/sections/About";
+import { Landing } from "@/sections/Landing";
 import { Collection } from "@/sections/Collection";
 import { Header } from "@/sections/Header";
 
@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <AboutSection />
-      <Collection/>
+      <Landing />
+      <Collection />
     </div>
   );
 }

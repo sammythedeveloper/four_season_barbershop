@@ -1,5 +1,5 @@
 import AboutIcon from "@/assets/images/download.svg";
-export const AboutSection = () => {
+export const Landing = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-white relative overflow-hidden">
       {/* Grid Background */}
@@ -13,10 +13,10 @@ export const AboutSection = () => {
     before:bg-[radial-gradient(circle,#e5e7eb33_1px,transparent_1px)] 
     before:bg-[size:40px_40px] before:opacity-10"
       ></div>
-   <div
-          className="absolute inset-0 before:absolute before:inset-0 before:animate-[pulsegrid_6s_ease-in-out_infinite] 
+      <div
+        className="absolute inset-0 before:absolute before:inset-0 before:animate-[pulsegrid_6s_ease-in-out_infinite] 
           before:bg-[radial-gradient(circle,#e5e7eb33_1px,transparent_1px)] before:bg-[size:40px_40px] before:opacity-10"
-        ></div>
+      ></div>
       {/* Main Content */}
       <div className="z-10 text-center px-4">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-black">
