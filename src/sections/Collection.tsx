@@ -1,12 +1,13 @@
-import one from "@/assets/images/one.jpg";
-import two from "@/assets/images/two.jpg";
-import three from "@/assets/images/three.jpg";
+import one from "@/assets/images/3.jpg";
+import two from "@/assets/images/2.jpg";
+import three from "@/assets/images/4.jpg";
 import four from "@/assets/images/four.jpg";
 import five from "@/assets/images/five.jpg";
-import six from "@/assets/images/six.jpg";
-import eight from "@/assets/images/seven.jpg";
-import ten from "@/assets/images/eight.jpg";
-import eleven from "@/assets/images/ten.jpg";
+import six from "@/assets/images/6.jpg";
+import seven from "@/assets/images/7.jpg";
+import eight from "@/assets/images/8.jpg";
+import nine from "@/assets/images/12.jpg";
+import ten from "@/assets/images/10.jpg";
 import Image from "next/image";
 import { Fragment } from "react";
 import { Card } from "@/components/Card";
@@ -15,32 +16,37 @@ import { Card } from "@/components/Card";
 const cuts = [
   
   {
-    avatar: six,
-  },  {
-    avatar: eight,
-  },  {
-    avatar: ten,
-  },
-  {
     avatar: one,
   },
   {
     avatar: two,
   },
   {
-
     avatar: three,
   },
   {
-
     avatar:four ,
   },
   {
     avatar: five,
   },
   {
-    avatar: eleven,
+    avatar:six ,
   },
+  {
+    avatar:seven ,
+  },
+  {
+    avatar:eight ,
+  },
+  {
+    avatar:nine,
+  },
+  {
+    avatar:ten ,
+  },
+
+
 ];
 
 export const Collection = () => {
