@@ -13,6 +13,14 @@ import { Card } from "@/components/Card";
 
 
 const cuts = [
+  
+  {
+    avatar: six,
+  },  {
+    avatar: eight,
+  },  {
+    avatar: ten,
+  },
   {
     avatar: one,
   },
@@ -25,10 +33,13 @@ const cuts = [
   },
   {
 
-    avatar: four,
+    avatar:four ,
   },
   {
     avatar: five,
+  },
+  {
+    avatar: eleven,
   },
 ];
 

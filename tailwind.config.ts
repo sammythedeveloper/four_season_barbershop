@@ -23,11 +23,12 @@ const config: Config = {
     extend: {
       animation: {
         pulsegrid: "pulsegrid 8s ease-in-out infinite",
+        "move-left": "move-left 90s linear infinite",
       },
       keyframes: {
         pulsegrid: {
-          '0%, 100%': { opacity: '0.1', transform: 'translate(0, 0)' },
-          '50%': { opacity: '0.3', transform: 'translate(5px, 5px)' },
+          "0%, 100%": { opacity: "0.1", transform: "translate(0, 0)" },
+          "50%": { opacity: "0.3", transform: "translate(5px, 5px)" },
         },
         "ping-large": {
           "75%,100%": {
@@ -51,10 +52,6 @@ const config: Config = {
             transform: "translateX(0%)",
           },
         },
-      },
-      // Adding custom pseudo-element support
-      corePlugins: {
-        preflight: true, // Enables support for pseudo-elements
       },
     },
   },
