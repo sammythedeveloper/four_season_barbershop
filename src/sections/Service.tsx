@@ -59,20 +59,26 @@ const services = [
 export const Service = () => {
   return (
     <div className="py-16 lg:py-24">
-      <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center py-4">
+      <div className="container px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="w-60 h-100 shadow-md text-center p-4">
-              <h3 className="m-6 text-lg font-semibold">{service.service}</h3>
-              <service.image className="mx-auto w-16 h-16" />{" "}
-              {/* Render SVG component directly */}
-              <hr className="mt-2" />
-              <p className="mt-4">{service.description}</p>
-              <p className="mt-2 text-sm text-black ">{service.price}</p>
+            <div
+              key={index}
+              className="w-full max-w-[400px] sm:max-w-full shadow-md rounded-lg text-center p-6 bg-white flex flex-col items-center"
+            >
+              <service.image className="w-16 h-16 mb-4" />
+              <h2 className="text-lg font-semibold mb-2">{service.service}</h2>
+              <hr className="w-16 border-t-2 border-gray-300 mb-4" />
+              <p className="text-sm text-gray-700 mb-4">
+                {service.description}
+              </p>
+              <p className="text-sm font-medium text-black mb-4">
+                {service.price}
+              </p>
               {service.link && (
                 <a
                   href="#"
-                  className="mt-4 inline-block bg-black text-white py-2 px-4 rounded-md text-sm"
+                  className="mt-auto inline-block bg-black text-white py-2 px-4 rounded-md text-sm hover:bg-gray-800 transition"
                 >
                   {service.link}
                 </a>
