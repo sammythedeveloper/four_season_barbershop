@@ -27,8 +27,12 @@ export const Landing = () => {
           and individuality that sets us apart. At Four Season Studios, it’s
           about more than just a haircut – it’s about setting a new standard.
         </p>
-        <AboutIcon className=" text-blue-500" />
-        <p className="mt-4 text-xl sm:text-2xl text-gray-600">Men care Salon</p>
+        <AboutIcon className="" />
+        <p className="mt-4 text-2xl md:text-3xl font-extrabold text-black uppercase ">
+          Experience finest grooming with precision haircuts, fades, shaves, and
+          beard trims.
+        </p>
+        
       </div>
       {/* Star Logo */}
     </section>

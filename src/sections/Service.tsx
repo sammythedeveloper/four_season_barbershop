@@ -60,6 +60,10 @@ export const Service = () => {
   return (
     <div className="py-16 lg:py-24">
       <div className="container px-4">
+        <div className=" mb-10 items-center text-center text-2xl md:text-3xl font-extrabold text-black uppercase ">
+          <p className=" py-10 " >Our Services</p>
+          <hr />
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div

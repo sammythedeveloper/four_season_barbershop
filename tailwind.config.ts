@@ -32,7 +32,7 @@ const config: Config = {
         },
         "ping-large": {
           "75%,100%": {
-            transform: "scale(3)",
+            transform: "scale(4)",
             opacity: "0",
           },
         },

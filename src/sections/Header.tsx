@@ -9,7 +9,7 @@ export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-40 backdrop-blur-lg bg-white">
+    <div className="sticky top-0 z-40 backdrop-blur-lg ">
       <div className="container mb-7">
         <div className="flex justify-between items-center h-24 md:h-28 px-4">
           {/* Logo */}
