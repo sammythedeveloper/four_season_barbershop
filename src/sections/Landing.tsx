@@ -1,12 +1,12 @@
 import AboutIcon from "@/assets/images/download.svg";
-import ArrowDown from "@/assets/images/comb.svg";
-import grainImage from "@/assets/images/grain.jpg";
 import StartIcon from "@/assets/images/razor.svg";
 import { HeroOrbit } from "@/components/Orbit";
 import SparkleIcon from "@/assets/images/scissors.svg";
 import Blade from "@/assets/images/blade.svg";
 import Comb from "@/assets/images/both.svg";
 import Shampoo from "@/assets/images/shampoo.svg";
+import Clean from "@/assets/images/clean.svg";
+import Shaver from "@/assets/images/shaver.svg";
 export const Landing = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-white relative overflow-hidden ">
@@ -41,32 +41,19 @@ export const Landing = () => {
           beard trims.
         </p>
         <div className=" absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
-        <div className="size-[620px] hero-ring"></div>
-        <div className="size-[820px] hero-ring"></div>
-        <div className="size-[1020px] hero-ring"></div>
-        <div className="size-[1220px] hero-ring"> </div>
+        <div className="size-[120px] hero-ring"></div>
+        <div className="size-[120px] hero-ring"></div>
+        <div className="size-[120px] hero-ring"></div>
+        <div className="size-[120px] hero-ring"> </div>
         <HeroOrbit
           size={530}
-          rotation={-14}
+          rotation={-24}
           shouldOrbit
           orbitDuration="30s  "
           shouldSpin
           spinDuration="3s"
         >
-          <Comb  className=" size-5 text-emerald-300/20" />
-        </HeroOrbit>
-        <HeroOrbit
-          size={440}
-          rotation={79}
-          shouldOrbit
-          orbitDuration="32s"
-          shouldSpin
-          spinDuration="3s"
-        >
-          <SparkleIcon className=" size-8 text-emerald-300/20" />
-        </HeroOrbit>
-        <HeroOrbit size={520} rotation={-41} shouldOrbit orbitDuration="34s">
-          <div className=" size-2 rounded-full bg-emerald-300/20" />
+          <Comb  className=" size-16 text-emerald-300/20" />
         </HeroOrbit>
         <HeroOrbit
           size={530}
@@ -77,6 +64,19 @@ export const Landing = () => {
           spinDuration="3s"
         >
           <Blade  className=" size-10 text-emerald-300/20" />
+          </HeroOrbit>
+          <HeroOrbit
+          size={530}
+          rotation={-78}
+          shouldOrbit
+          orbitDuration="36s"
+          shouldSpin
+          spinDuration="3s"
+        >
+          <Shaver  className=" size-10 text-emerald-300/20" />
+          </HeroOrbit>
+          <HeroOrbit size={350} rotation={-5} shouldOrbit orbitDuration="42s">
+          <div className=" size-2 rounded-full bg-emerald-300/20" />
         </HeroOrbit>
         <HeroOrbit
           size={650}
@@ -86,7 +86,6 @@ export const Landing = () => {
           shouldSpin
           spinDuration="6s"
         >
-          <StartIcon className=" size-8 text-emerald-300" />
         </HeroOrbit>
         <HeroOrbit
           size={590}
@@ -96,14 +95,27 @@ export const Landing = () => {
           shouldSpin
           spinDuration="6s"
         >
-          <StartIcon className=" size-12 text-emerald-300" />
+          <StartIcon className=" size-20 text-emerald-300" />
         </HeroOrbit>
         <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
           <div className=" size-2 rounded-full bg-emerald-300/20" />
         </HeroOrbit>
         <HeroOrbit
-          size={710}
+          size={610}
           rotation={144}
+          shouldOrbit
+          orbitDuration="44s"
+          shouldSpin
+          spinDuration="3s"
+        >
+          <Clean className=" size-14 text-emerald-300/20" />
+          </HeroOrbit>
+          <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
+          <div className=" size-3 rounded-full" />
+        </HeroOrbit>
+          <HeroOrbit
+          size={510}
+          rotation={124}
           shouldOrbit
           orbitDuration="44s"
           shouldSpin
@@ -115,8 +127,8 @@ export const Landing = () => {
           <div className=" size-3 rounded-full" />
         </HeroOrbit>
         <HeroOrbit
-          size={800}
-          rotation={-72}
+          size={600}
+          rotation={-52}
           shouldOrbit
           orbitDuration="48s"
           shouldSpin
