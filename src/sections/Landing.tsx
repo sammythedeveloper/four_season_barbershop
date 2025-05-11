@@ -41,102 +41,101 @@ export const Landing = () => {
           beard trims.
         </p>
         <div className=" absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
-        <div className="size-[120px] hero-ring"></div>
-        <div className="size-[120px] hero-ring"></div>
-        <div className="size-[120px] hero-ring"></div>
-        <div className="size-[120px] hero-ring"> </div>
-        <HeroOrbit
-          size={530}
-          rotation={-24}
-          shouldOrbit
-          orbitDuration="30s  "
-          shouldSpin
-          spinDuration="3s"
-        >
-          <Comb  className=" size-16 text-emerald-300/20" />
-        </HeroOrbit>
-        <HeroOrbit
-          size={530}
-          rotation={178}
-          shouldOrbit
-          orbitDuration="36s"
-          shouldSpin
-          spinDuration="3s"
-        >
-          <Blade  className=" size-10 text-emerald-300/20" />
+          <div className="size-[120px] hero-ring"></div>
+          <div className="size-[120px] hero-ring"></div>
+          <div className="size-[120px] hero-ring"></div>
+          <div className="size-[120px] hero-ring"> </div>
+          <HeroOrbit
+            size={530}
+            rotation={-24}
+            shouldOrbit
+            orbitDuration="30s  "
+            shouldSpin
+            spinDuration="3s"
+          >
+            <Comb className=" size-16 text-emerald-300/20" />
           </HeroOrbit>
           <HeroOrbit
-          size={530}
-          rotation={-78}
-          shouldOrbit
-          orbitDuration="36s"
-          shouldSpin
-          spinDuration="3s"
-        >
-          <Shaver  className=" size-10 text-emerald-300/20" />
+            size={530}
+            rotation={178}
+            shouldOrbit
+            orbitDuration="36s"
+            shouldSpin
+            spinDuration="3s"
+          >
+            <Blade className=" size-14 text-emerald-300/20" />
+          </HeroOrbit>
+          <HeroOrbit
+            size={530}
+            rotation={-78}
+            shouldOrbit
+            orbitDuration="36s"
+            shouldSpin
+            spinDuration="3s"
+          >
+            <Shaver className=" size-10 text-emerald-300/20" />
           </HeroOrbit>
           <HeroOrbit size={350} rotation={-5} shouldOrbit orbitDuration="42s">
-          <div className=" size-2 rounded-full bg-emerald-300/20" />
-        </HeroOrbit>
-        <HeroOrbit
-          size={650}
-          rotation={20}
-          shouldOrbit
-          orbitDuration="38s"
-          shouldSpin
-          spinDuration="6s"
-        >
-        </HeroOrbit>
-        <HeroOrbit
-          size={590}
-          rotation={98}
-          shouldOrbit
-          orbitDuration="40s"
-          shouldSpin
-          spinDuration="6s"
-        >
-          <StartIcon className=" size-20 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
-          <div className=" size-2 rounded-full bg-emerald-300/20" />
-        </HeroOrbit>
-        <HeroOrbit
-          size={610}
-          rotation={144}
-          shouldOrbit
-          orbitDuration="44s"
-          shouldSpin
-          spinDuration="3s"
-        >
-          <Clean className=" size-14 text-emerald-300/20" />
+            <div className=" size-2 rounded-full bg-emerald-300/20" />
+          </HeroOrbit>
+          <HeroOrbit
+            size={650}
+            rotation={20}
+            shouldOrbit
+            orbitDuration="38s"
+            shouldSpin
+            spinDuration="6s"
+          ></HeroOrbit>
+          <HeroOrbit
+            size={590}
+            rotation={98}
+            shouldOrbit
+            orbitDuration="40s"
+            shouldSpin
+            spinDuration="6s"
+          >
+            <StartIcon className=" size-20 text-emerald-300" />
+          </HeroOrbit>
+          <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
+            <div className=" size-2 rounded-full bg-emerald-300/20" />
+          </HeroOrbit>
+          <HeroOrbit
+            size={610}
+            rotation={144}
+            shouldOrbit
+            orbitDuration="44s"
+            shouldSpin
+            spinDuration="3s"
+          >
+            <Clean className=" size-14 text-emerald-300/20" />
           </HeroOrbit>
           <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
-          <div className=" size-3 rounded-full" />
-        </HeroOrbit>
+            <div className=" size-3 rounded-full" />
+          </HeroOrbit>
           <HeroOrbit
-          size={510}
-          rotation={124}
-          shouldOrbit
-          orbitDuration="44s"
-          shouldSpin
-          spinDuration="3s"
-        >
-          <SparkleIcon className=" size-14 text-emerald-300/20" />
-        </HeroOrbit>
-        <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
-          <div className=" size-3 rounded-full" />
-        </HeroOrbit>
-        <HeroOrbit
-          size={600}
-          rotation={-52}
-          shouldOrbit
-          orbitDuration="48s"
-          shouldSpin
-          spinDuration="6s"
-        >
-          <Shampoo className=" size-28 text-emerald-300" />
-        </HeroOrbit>
-      </div>
+            size={510}
+            rotation={124}
+            shouldOrbit
+            orbitDuration="44s"
+            shouldSpin
+            spinDuration="3s"
+          >
+            <SparkleIcon className=" size-14 text-emerald-300/20" />
+          </HeroOrbit>
+          <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
+            <div className=" size-3 rounded-full" />
+          </HeroOrbit>
+          <HeroOrbit
+            size={600}
+            rotation={-52}
+            shouldOrbit
+            orbitDuration="48s"
+            shouldSpin
+            spinDuration="6s"
+          >
+            <Shampoo className=" size-28 text-emerald-300" />
+          </HeroOrbit>
+        </div>
       </div>
       {/* Star Logo */}
     </section>
