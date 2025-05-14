@@ -1,12 +1,11 @@
+import { Header } from "@/sections/Header";
+import { Footer } from "@/sections/Footer";
 import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Four Season Barbershop",
-  description: "Created with the help of Frontend Tribe",
-  icons: {
-    icon: "./fav.png", // or "/favicon.ico"
-  },
+  description: "Elite grooming experience",
 };
 
 export default function RootLayout({
@@ -16,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -1,25 +1,19 @@
+import { Collection } from "@/sections/Collection";
+import { Footer } from "@/sections/Footer";
+import { Header } from "@/sections/Header";
 import { Landing } from "@/sections/Landing";
-import { Braids } from "@/sections/Services/Braids";
-import { Cosmetics } from "@/sections/Services/Cosmetics";
-import { HairCut } from "@/sections/Services/HairCut";
-import { Shave } from "@/sections/Services/Shave";
-import { SlikPress } from "@/sections/Services/SilkPress";
-import { Vip } from "@/sections/Services/Vip";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Service } from "@/sections/Service";
+
 
 function App() {
   return (
-    <Router>
-      <Routes>
-      <Route path="/" element={<Landing />} />
-        <Route path="/HairCut" element={<HairCut />} />
-        <Route path="/Shave" element={<Shave />} />
-        <Route path="/SlikPress" element={<SlikPress />} />
-        <Route path="/Vip" element={<Vip />} />
-        <Route path="/Braids" element={<Braids />} />
-        <Route path="/Cosmetics" element={<Cosmetics />} />
-      </Routes>
-    </Router>
+    <div>
+      <Header/>
+      <Landing />
+      <Service />
+      <Collection />
+      <Footer /> 
+    </div>
   );
 }
 
