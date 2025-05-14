@@ -1,3 +1,4 @@
+import { Landing } from "@/sections/Landing";
 import { Braids } from "@/sections/Services/Braids";
 import { Cosmetics } from "@/sections/Services/Cosmetics";
 import { HairCut } from "@/sections/Services/HairCut";
@@ -10,6 +11,7 @@ function App() {
   return (
     <Router>
       <Routes>
+      <Route path="/" element={<Landing />} />
         <Route path="/HairCut" element={<HairCut />} />
         <Route path="/Shave" element={<Shave />} />
         <Route path="/SlikPress" element={<SlikPress />} />
