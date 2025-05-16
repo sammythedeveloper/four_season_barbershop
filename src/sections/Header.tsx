@@ -4,6 +4,7 @@ import { useState } from "react";
 import Scissors from "@/assets/images/scissors.svg";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import Link from "next/link";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,14 +15,22 @@ export const Header = () => {
         <div className="flex justify-between items-center h-24 md:h-28 px-4">
           {/* Logo */}
           <div className="flex items-center text-base font-bold">
-            <Scissors className="w-10 h-10" />
+            <Link href="/">
+              <Scissors className="w-10 h-10" />
+            </Link>
             <span className=" sm:text-sm ml-4">Four Season</span>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-4 text-sm whitespace-nowrap">
             <div className="flex gap-4 items-center">
-              <div>Service & Pricing</div>
+              <Link
+                href="/#services"
+                scroll={true}
+                className="hover:text-blue-500"
+              >
+                Service & Pricing
+              </Link>
               <div>Location</div>
               <div>Studio Membership</div>
               <div>Contact Us</div>
