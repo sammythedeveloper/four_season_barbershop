@@ -27,13 +27,13 @@ export const Header = () => {
               <Link
                 href="/#services"
                 scroll={true}
-                className="hover:text-blue-500"
+                className="hover:text-purple-700 cursor-pointer "
               >
                 Service & Pricing
               </Link>
-              <div>Studio Membership</div>
-              <div>Contact Us</div>
-              <div className="bg-white text-black rounded-full py-1.5 px-4 hover:bg-black hover:text-white">
+              <div className="hover:text-purple-700 cursor-pointer "> Studio Membership</div>
+              <div className="hover:text-purple-700 cursor-pointer " >Contact Us</div>
+              <div className="bg-white text-black rounded-full cursor-pointer  py-1.5 px-4 hover:bg-purple-700 hover:text-white">
                 Book Now
               </div>
             </div>
