@@ -82,7 +82,7 @@ export const Service = () => {
               {service.path && (
                 <Link
                   href={service.path}
-                  className="mt-auto inline-block bg-black text-white py-2 px-4 rounded-md text-sm hover:bg-gray-800 transition"
+                  className="mt-auto inline-block bg-black  hover:bg-purple-700 text-white py-2 px-4 rounded-md text-sm transition"
                 >
                   BOOK NOW
                 </Link>

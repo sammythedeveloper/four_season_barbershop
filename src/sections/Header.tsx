@@ -31,7 +31,6 @@ export const Header = () => {
               >
                 Service & Pricing
               </Link>
-              <div>Location</div>
               <div>Studio Membership</div>
               <div>Contact Us</div>
               <div className="bg-white text-black rounded-full py-1.5 px-4 hover:bg-black hover:text-white">
