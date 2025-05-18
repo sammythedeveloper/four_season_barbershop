@@ -48,7 +48,7 @@ const services = [
     description:
       "Elite grooming services tailored to refine and elevate your personal style.",
     price: "Hours & Prices Vary",
-    path: "/braids",
+    path: "/braid",
   },
   {
     service: "VIP",
