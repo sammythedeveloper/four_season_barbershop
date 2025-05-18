@@ -1,5 +1,5 @@
 import { Braids } from "../Services/Braids";
 
-export default function braid() {
+export default function BraidPage() {
   return <Braids />;
 }

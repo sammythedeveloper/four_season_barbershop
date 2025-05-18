@@ -1,33 +1,37 @@
-'use client'
-
+"use client";
 import React, { useState } from "react";
 
-export const Braids= () => {
-   const [category, setCategory] = useState("single");
-    const [selectedService, setSelectedService] = useState("");
-  
-    const singleServices = [
-      { name: "Buzzcut/Beard Trim", time: "45 mins", price: "$43" },
-      { name: "Beard Shaping/Beard Fade", time: "1 hr", price: "$30" },
-      { name: "Hair Line-Up", time: "30 mins", price: "$25" },
-      { name: "Beard Line-Up", time: "45 mins", price: "$25" },
-      { name: "Haircut", time: "45 mins", price: "$58" },
-    ];
-  
-    const comboServices = [
-      { name: "Line up hair + Beard", time: "1 hr", price: "$38" },
-      { name: "Haircut + Steam Razor Shave", time: "1 hr", price: "$78" },
-      { name: "Haircut + Beard Trim", time: "1 hr", price: "$68" },
-    ];
-  
-    const servicesToShow = category === "single" ? singleServices : comboServices;
+export const Braids = () => {
+  const [category, setCategory] = useState("single");
+  const [selectedService, setSelectedService] = useState("");
+
+  const singleServices = [
+    { name: "Buzzcut/Beard Trim", time: "45 mins", price: "$43" },
+    { name: "Beard Shaping/Beard Fade", time: "1 hr", price: "$30" },
+    { name: "Hair Line-Up", time: "30 mins", price: "$25" },
+    { name: "Beard Line-Up", time: "45 mins", price: "$25" },
+    { name: "Haircut", time: "45 mins", price: "$58" },
+  ];
+
+  const comboServices = [
+    { name: "Line up hair + Beard", time: "1 hr", price: "$38" },
+    { name: "Haircut + Steam Razor Shave", time: "1 hr", price: "$78" },
+    { name: "Haircut + Beard Trim", time: "1 hr", price: "$68" },
+  ];
+
+  const servicesToShow = category === "single" ? singleServices : comboServices;
+
   return (
-       <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg space-y-6">
-      <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">Book a Service</h2>
+    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg space-y-6">
+      <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">
+        Book a Service
+      </h2>
 
       {/* Category Selection */}
       <div>
-        <label className="block text-gray-700 font-medium mb-1 text-base">Service Category</label>
+        <label className="block text-gray-700 font-medium mb-1 text-base">
+          Service Category
+        </label>
         <select
           className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
           value={category}
@@ -43,14 +47,18 @@ export const Braids= () => {
 
       {/* Service Selection */}
       <div>
-        <label className="block text-gray-700 font-medium mb-1 text-base">Select a Service</label>
+        <label className="block text-gray-700 font-medium mb-1 text-base">
+          Select a Service
+        </label>
         <select
           className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
           value={selectedService}
           onChange={(e) => setSelectedService(e.target.value)}
           required
         >
-          <option value="" disabled>Select a service</option>
+          <option value="" disabled>
+            Select a service
+          </option>
           {servicesToShow.map((service, idx) => (
             <option key={idx} value={service.name}>
               {`${service.name} – ${service.time} – ${service.price}`}
@@ -61,7 +69,12 @@ export const Braids= () => {
 
       {/* Name */}
       <div>
-        <label htmlFor="name" className="block text-gray-700 font-medium mb-1 text-base">Full Name</label>
+        <label
+          htmlFor="name"
+          className="block text-gray-700 font-medium mb-1 text-base"
+        >
+          Full Name
+        </label>
         <input
           type="text"
           id="name"
@@ -73,7 +86,12 @@ export const Braids= () => {
 
       {/* Phone */}
       <div>
-        <label htmlFor="phone" className="block text-gray-700 font-medium mb-1 text-base">Phone Number</label>
+        <label
+          htmlFor="phone"
+          className="block text-gray-700 font-medium mb-1 text-base"
+        >
+          Phone Number
+        </label>
         <input
           type="tel"
           id="phone"
@@ -86,7 +104,12 @@ export const Braids= () => {
       {/* Date & Time */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="date" className="block text-gray-700 font-medium mb-1 text-base">Preferred Date</label>
+          <label
+            htmlFor="date"
+            className="block text-gray-700 font-medium mb-1 text-base"
+          >
+            Preferred Date
+          </label>
           <input
             type="date"
             id="date"
@@ -96,7 +119,12 @@ export const Braids= () => {
           />
         </div>
         <div>
-          <label htmlFor="time" className="block text-gray-700 font-medium mb-1 text-base">Preferred Time</label>
+          <label
+            htmlFor="time"
+            className="block text-gray-700 font-medium mb-1 text-base"
+          >
+            Preferred Time
+          </label>
           <input
             type="time"
             id="time"
@@ -115,6 +143,5 @@ export const Braids= () => {
         Book Now
       </button>
     </div>
-    )
-  };
-  
+  );
+};
