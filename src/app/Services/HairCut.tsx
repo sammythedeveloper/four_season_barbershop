@@ -2,10 +2,15 @@
 import { Grid } from "@/components/Grid";
 import { Collection } from "@/sections/Collection";
 import React, { useState } from "react";
+import Select from "react-select";
 
 export const HairCut = () => {
   const [category, setCategory] = useState("single");
   const [selectedService, setSelectedService] = useState("");
+  const options = [
+    { value: "single", label: "Single Services" },
+    { value: "combo", label: "Combo Services" },
+  ];
 
   const singleServices = [
     { name: "Buzzcut/Beard Trim", time: "45 mins", price: "$43" },
@@ -31,22 +36,49 @@ export const HairCut = () => {
         </h2>
 
         {/* Category Selection */}
-        <div>
-          <label className="block text-purple-800 font-thin mb-1 text-base">
-            Service Category
-          </label>
-          <select
-            className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
-            value={category}
-            onChange={(e) => {
-              setCategory(e.target.value);
-              setSelectedService("");
-            }}
-          >
-            <option className="text-purple-800 font-thin "  value="single">Single Services</option>
-            <option value="combo">Combo Services</option>
-          </select>
-        </div>
+      {/* Category Selection */}
+{/* Category Selection with react-select */}
+<div>
+  <label className="block text-purple-800 font-thin mb-1 text-base">
+    Service Category
+  </label>
+  <Select
+    options={options}
+    value={options.find((opt) => opt.value === category)}
+    onChange={(selectedOption) => {
+      if (selectedOption) {
+        setCategory(selectedOption.value);
+        setSelectedService("");
+      }
+    }}
+    className="react-select-container"
+    classNamePrefix="react-select"
+    styles={{
+      control: (base) => ({
+        ...base,
+        backgroundColor: "#fff",
+        borderColor: "#fb923c", // Tailwind's orange-400
+        minHeight: "3rem",
+        boxShadow: "none",
+        padding: "0 0.25rem",
+      }),
+      menu: (base) => ({
+        ...base,
+        backgroundColor: "#fff",
+        color: "#374151", // Tailwind's gray-800
+        zIndex: 20,
+      }),
+      option: (base, state) => ({
+        ...base,
+        backgroundColor: state.isFocused ? "#C084FC" : "#fff", // Tailwind orange-200
+        color: "#1f2937",
+        cursor: "pointer",
+      }),
+    }}
+  />
+</div>
+
+
 
         {/* Service Selection */}
         <div>
@@ -164,7 +196,7 @@ export const HairCut = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full h-12 bg-black hover:bg-purple-700 text-white text-lg font-semibold rounded"
+          className="w-full h-12 bg-orange-500  hover:bg-purple-700 text-white text-lg font-semibold rounded"
         >
           Book Now
         </button>
