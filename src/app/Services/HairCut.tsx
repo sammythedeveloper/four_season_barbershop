@@ -24,39 +24,37 @@ export const HairCut = () => {
   const servicesToShow = category === "single" ? singleServices : comboServices;
 
   return (
-    <div className=" mx-auto " >
-      {" "}
-      <Grid />
-      <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg space-y-6">
-        <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">
+    <div className=" mx-auto ">
+      <div className="max-w-2xl mx-auto p-6 rounded-lg  space-y-6">
+        <h2 className="text-3xl font-bold mb-4 text-purple-800 underline underline-offset-8   text-center">
           Book a Service
         </h2>
 
         {/* Category Selection */}
         <div>
-          <label className="block text-gray-700 font-medium mb-1 text-base">
+          <label className="block text-purple-800 font-thin mb-1 text-base">
             Service Category
           </label>
           <select
-            className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+            className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
             value={category}
             onChange={(e) => {
               setCategory(e.target.value);
               setSelectedService("");
             }}
           >
-            <option value="single">Single Services</option>
+            <option className="text-purple-800 font-thin "  value="single">Single Services</option>
             <option value="combo">Combo Services</option>
           </select>
         </div>
 
         {/* Service Selection */}
         <div>
-          <label className="block text-gray-700 font-medium mb-1 text-base">
+          <label className="block text-purple-800 font-thin mb-1 text-base">
             Select a Service
           </label>
           <select
-            className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+            className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
             value={selectedService}
             onChange={(e) => setSelectedService(e.target.value)}
             required
@@ -76,7 +74,7 @@ export const HairCut = () => {
         <div>
           <label
             htmlFor="name"
-            className="block text-gray-700 font-medium mb-1 text-base"
+            className="block text-purple-800 font-thin mb-1 text-base"
           >
             Full Name
           </label>
@@ -85,7 +83,7 @@ export const HairCut = () => {
             id="name"
             name="name"
             required
-            className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+            className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -93,7 +91,7 @@ export const HairCut = () => {
         <div>
           <label
             htmlFor="phone"
-            className="block text-gray-700 font-medium mb-1 text-base"
+            className="block text-purple-800 font-thin mb-1 text-base"
           >
             Phone Number
           </label>
@@ -102,7 +100,7 @@ export const HairCut = () => {
             id="phone"
             name="phone"
             required
-            className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+            className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -111,7 +109,7 @@ export const HairCut = () => {
           <div>
             <label
               htmlFor="date"
-              className="block text-gray-700 font-medium mb-1 text-base"
+              className="block text-purple-800 font-thin mb-1 text-base"
             >
               Preferred Date
             </label>
@@ -120,13 +118,13 @@ export const HairCut = () => {
               id="date"
               name="date"
               required
-              className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+              className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
             <label
               htmlFor="time"
-              className="block text-gray-700 font-medium mb-1 text-base"
+              className="block text-purple-800 font-thin mb-1 text-base"
             >
               Preferred Time
             </label>
@@ -135,8 +133,31 @@ export const HairCut = () => {
               id="time"
               name="time"
               required
-              className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+              className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
             />
+          </div>
+          <div className="flex items-start gap-2">
+            <input
+              type="checkbox"
+              id="consent"
+              className="mt-1 accent-orange-500 w-4 h-4"
+            />
+            <label
+              htmlFor="consent"
+              className="text-sm text-gray-700 font-thin leading-relaxed"
+            >
+              I agree to receive communications from Four Season Barber. I can
+              opt out of these emails by following the instructions provided
+              here. By submitting this form, you agree to the Four Season
+              Barbershop
+              <a
+                href="/privacy-policy"
+                className="text-orange-500 underline hover:text-orange-400 ml-1"
+              >
+                Privacy Policy
+              </a>
+              .
+            </label>
           </div>
         </div>
 
