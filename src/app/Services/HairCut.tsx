@@ -143,7 +143,7 @@ export const HairCut = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full h-12 bg-gray-600 hover:bg-purple-700 text-white text-lg font-semibold rounded"
+          className="w-full h-12 bg-black hover:bg-purple-700 text-white text-lg font-semibold rounded"
         >
           Book Now
         </button>

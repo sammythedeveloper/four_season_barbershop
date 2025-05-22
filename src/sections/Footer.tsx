@@ -3,18 +3,18 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok } from 'react-icons/fa';
 
 export const Footer = () => {
   return (
-    <footer className=" text-white py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between space-y-8 md:space-y-0">
+    <footer className=" text-white py-10 bg-gray-100 mt-24 ">
+      <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between space-y-8 md:space-y-0">
         
         {/* Branding and Socials */}
         <div className="flex flex-col space-y-4">
           <h3 className="text-2xl font-bold text-black">BarberX</h3>
           <p className="text-black max-w-xs">Cutting-edge styles. Old-school service.</p>
           <div className="flex space-x-4 text-xl text-black">
-            <a href="#" aria-label="Facebook" className="hover:text-yellow-400"><FaFacebookF /></a>
-            <a href="#" aria-label="Instagram" className="hover:text-yellow-400"><FaInstagram /></a>
-            <a href="#" aria-label="Twitter" className="hover:text-yellow-400"><FaTwitter /></a>
-            <a href="#" aria-label="TikTok" className="hover:text-yellow-400"><FaTiktok /></a>
+            <a href="#" aria-label="Facebook" className="hover:text-purple-500"><FaFacebookF /></a>
+            <a href="#" aria-label="Instagram" className="hover:text-purple-500"><FaInstagram /></a>
+            <a href="#" aria-label="Twitter" className="hover:text-purple-500"><FaTwitter /></a>
+            <a href="#" aria-label="TikTok" className="hover:text-purple-500"><FaTiktok /></a>
           </div>
         </div>
 
@@ -22,10 +22,10 @@ export const Footer = () => {
         <div>
           <h4 className="text-lg font-semibold mb-3 text-black">Quick Links</h4>
           <ul className="space-y-2 text-black">
-            <li><a href="#" className="hover:text-yellow-400">Home</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Services</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Book Now</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Gallery</a></li>
+            <li><a href="#" className="hover:text-purple-500">Home</a></li>
+            <li><a href="#" className="hover:text-purple-500">Services</a></li>
+            <li><a href="#" className="hover:text-purple-500">Book Now</a></li>
+            <li><a href="#" className="hover:text-purple-500">Gallery</a></li>
           </ul>
         </div>
 
