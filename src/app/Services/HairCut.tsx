@@ -57,7 +57,7 @@ export const HairCut = () => {
       control: (base) => ({
         ...base,
         backgroundColor: "#fff",
-        borderColor: "#fb923c", // Tailwind's orange-400
+        borderColor: "#808080", // Tailwind's orange-400
         minHeight: "3rem",
         boxShadow: "none",
         padding: "0 0.25rem",
@@ -86,7 +86,7 @@ export const HairCut = () => {
             Select a Service
           </label>
           <select
-            className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
+            className="w-full h-12 px-4 py-2 text-base border border-gray-500 rounded focus:ring-blue-500 focus:border-blue-500"
             value={selectedService}
             onChange={(e) => setSelectedService(e.target.value)}
             required
@@ -115,7 +115,7 @@ export const HairCut = () => {
             id="name"
             name="name"
             required
-            className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
+            className="w-full h-12 px-4 py-2 text-base border border-gray-500 rounded focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -132,7 +132,7 @@ export const HairCut = () => {
             id="phone"
             name="phone"
             required
-            className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
+            className="w-full h-12 px-4 py-2 text-base border border-gray-500 rounded focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -150,7 +150,7 @@ export const HairCut = () => {
               id="date"
               name="date"
               required
-              className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
+              className="w-full h-12 px-4 py-2 text-base border border-gray-500 rounded focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
