@@ -2,12 +2,10 @@
 
 import React, { useState } from "react";
 import Select from "react-select";
-import { useRouter } from "next/navigation";
 
 export const HairCut = () => {
   const [category, setCategory] = useState("single");
   const [selectedService, setSelectedService] = useState("");
-  const router = useRouter();
 
   const options = [
     { value: "single", label: "Single Services" },
@@ -30,34 +28,22 @@ export const HairCut = () => {
 
   const servicesToShow = category === "single" ? singleServices : comboServices;
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    // Append state-managed fields
-    formData.append("category", category);
-    formData.append("selectedService", selectedService);
-
-    try {
-      await fetch("https://formsubmit.co/millionfiaa@gmail.com", {
-        method: "POST",
-        body: formData,
-      });
-
-      router.push("/thank-you");
-    } catch (error) {
-      console.error("Form submission error:", error);
-      alert("Something went wrong. Please try again.");
-    }
-  };
-
   return (
     <form
-      onSubmit={handleSubmit}
+      action="https://formsubmit.co/millionfitaa@gmail.com"
+      method="POST"
       className="mx-auto max-w-2xl p-6 rounded-lg space-y-6"
     >
+      {/* Hidden Fields for React-controlled values */}
+      <input type="hidden" name="category" value={category} />
+      <input type="hidden" name="selectedService" value={selectedService} />
+      <input
+        type="hidden"
+        name="_next"
+        value="http://localhost:3000/thank-you"
+      />
+      <input type="hidden" name="_captcha" value="false" />
+
       <h2 className="text-3xl font-bold mb-4 text-purple-800 underline underline-offset-8 text-center">
         Book a Service
       </h2>
@@ -112,6 +98,7 @@ export const HairCut = () => {
           className="w-full h-12 px-4 py-2 text-base border border-gray-500 rounded focus:ring-blue-500 focus:border-blue-500"
           value={selectedService}
           onChange={(e) => setSelectedService(e.target.value)}
+          name="service"
           required
         >
           <option value="" disabled>
@@ -196,7 +183,7 @@ export const HairCut = () => {
         </div>
 
         {/* Consent */}
-        <div className="flex items-start gap-2">
+        <div className="flex items-start gap-2 col-span-full">
           <input
             type="checkbox"
             id="consent"
