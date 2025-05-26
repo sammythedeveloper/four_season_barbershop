@@ -1,25 +1,13 @@
 "use client";
-import { Grid } from "@/components/Grid";
-import { Collection } from "@/sections/Collection";
+
 import React, { useState } from "react";
-import { useEffect } from "react";
 import Select from "react-select";
 import { useRouter } from "next/navigation";
 
-
-
-  export const HairCut = () => {
-    const router = useRouter();
-
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        router.push("/"); // Redirect to homepage
-      }, 4000);
-  
-      return () => clearTimeout(timer);
-    }, [router]);
+export const HairCut = () => {
   const [category, setCategory] = useState("single");
   const [selectedService, setSelectedService] = useState("");
+  const router = useRouter();
 
   const options = [
     { value: "single", label: "Single Services" },
@@ -42,22 +30,37 @@ import { useRouter } from "next/navigation";
 
   const servicesToShow = category === "single" ? singleServices : comboServices;
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Append state-managed fields
+    formData.append("category", category);
+    formData.append("selectedService", selectedService);
+
+    try {
+      await fetch("https://formsubmit.co/millionfiaa@gmail.com", {
+        method: "POST",
+        body: formData,
+      });
+
+      router.push("/thank-you");
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <form
-      action="https://formsubmit.co/millnfitaa@gmail.com"
       onSubmit={handleSubmit}
-      method="POST"
       className="mx-auto max-w-2xl p-6 rounded-lg space-y-6"
     >
       <h2 className="text-3xl font-bold mb-4 text-purple-800 underline underline-offset-8 text-center">
         Book a Service
       </h2>
-
-      {/* Hidden inputs for sending category + service */}
-      <input type="hidden" name="category" value={category} />
-      <input type="hidden" name="selectedService" value={selectedService} />
-      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" />
-      <input type="hidden" name="_captcha" value="false" />
 
       {/* Category Selection */}
       <div>
@@ -114,17 +117,23 @@ import { useRouter } from "next/navigation";
           <option value="" disabled>
             Select a service
           </option>
-          {servicesToShow.map((service, idx) => (
-            <option key={idx} value={`${service.name} – ${service.time} – ${service.price}`}>
-              {`${service.name} – ${service.time} – ${service.price}`}
-            </option>
-          ))}
+          {servicesToShow.map((service, idx) => {
+            const label = `${service.name} – ${service.time} – ${service.price}`;
+            return (
+              <option key={idx} value={label}>
+                {label}
+              </option>
+            );
+          })}
         </select>
       </div>
 
       {/* Name */}
       <div>
-        <label htmlFor="name" className="block text-purple-800 font-thin mb-1 text-base">
+        <label
+          htmlFor="name"
+          className="block text-purple-800 font-thin mb-1 text-base"
+        >
           Full Name
         </label>
         <input
@@ -138,7 +147,10 @@ import { useRouter } from "next/navigation";
 
       {/* Phone */}
       <div>
-        <label htmlFor="phone" className="block text-purple-800 font-thin mb-1 text-base">
+        <label
+          htmlFor="phone"
+          className="block text-purple-800 font-thin mb-1 text-base"
+        >
           Phone Number
         </label>
         <input
@@ -153,7 +165,10 @@ import { useRouter } from "next/navigation";
       {/* Date & Time */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="date" className="block text-purple-800 font-thin mb-1 text-base">
+          <label
+            htmlFor="date"
+            className="block text-purple-800 font-thin mb-1 text-base"
+          >
             Preferred Date
           </label>
           <input
@@ -165,7 +180,10 @@ import { useRouter } from "next/navigation";
           />
         </div>
         <div>
-          <label htmlFor="time" className="block text-purple-800 font-thin mb-1 text-base">
+          <label
+            htmlFor="time"
+            className="block text-purple-800 font-thin mb-1 text-base"
+          >
             Preferred Time
           </label>
           <input
@@ -183,12 +201,14 @@ import { useRouter } from "next/navigation";
             type="checkbox"
             id="consent"
             name="consent"
-            className="mt-1 accent-orange-500 w-4 h-4"
             required
+            className="mt-1 accent-orange-500 w-4 h-4"
           />
-          <label htmlFor="consent" className="text-sm text-gray-700 font-thin leading-relaxed">
-            I agree to receive communications from Four Season Barber. I can opt
-            out of these emails by following the instructions provided here. By
+          <label
+            htmlFor="consent"
+            className="text-sm text-gray-700 font-thin leading-relaxed"
+          >
+            I agree to receive communications from Four Season Barber. By
             submitting this form, you agree to the Four Season Barbershop
             <a
               href="/privacy-policy"
