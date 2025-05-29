@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 
@@ -77,8 +77,12 @@ export const Service = () => {
               <service.image className="w-16 h-16 mb-4" />
               <h2 className="text-lg font-semibold mb-2">{service.service}</h2>
               <hr className="w-16 border-t-2 border-gray-300 mb-4" />
-              <p className="text-sm text-gray-700 mb-4">{service.description}</p>
-              <p className="text-sm font-medium text-black mb-4">{service.price}</p>
+              <p className="text-sm text-gray-700 mb-4">
+                {service.description}
+              </p>
+              <p className="text-sm font-medium text-black mb-4">
+                {service.price}
+              </p>
               {service.path && (
                 <Link
                   href={service.path}
@@ -91,20 +95,25 @@ export const Service = () => {
           ))}
         </div>
       </div>
-      <div className=" p-10  max-w-[2000px]  gap-16 text-center grid grid-cols-2 items-center" >
-            <div className="bg-gray-400 h-[300px] items-center   " >
-            <p>
-            SHOP MEMBERSHIPS
-            Use this space to promote the business, its products or its services. Help people become familiar with the business and its offerings, creating a sense of connection and trust.
-            </p>
-            </div>
-            <div className=" bg-black h-[300px] text-white   " >
-              <p>
-              CHECK OUT OUR NEWSLETTER
-              Subscribe to our newsletter for exclusive updates, tips, and offers delivered straight to your inbox!
-              </p>
-            </div>
-          </div>
+      <div className=" container p-5 text-lg max-w-[2000px] grid grid-cols-1 md:grid-cols-2 gap-16 text-center items-center  ">
+        <div className="bg-gray-400 h-[300px] text-left p-12 rounded-br-3xl  ">
+          <p className="text-2xl font-semibold mb-2">SHOP MEMBERSHIPS</p>
+          <p className="">
+            Help people become familiar with the business and its offerings,
+            creating a sense of connection and trust.
+          </p>
+          <button className="mt-auto inline-block  hover:bg-purple-700 text-black py-2 px-4  text-sm transition border hover:border-black ">
+            Coming Soon
+          </button>
+        </div>
+        <div className=" bg-black h-[300px] text-left  text-white items-center  p-12    ">
+          <p className="text-2xl font-semibold mb-2">CHECK OUT OUR NEWSLETTE</p>
+          <p>
+            Subscribe to our newsletter for exclusive updates, tips, and offers
+            delivered straight to your inbox!
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
