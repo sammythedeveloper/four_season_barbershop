@@ -96,22 +96,25 @@ export const Service = () => {
         </div>
       </div>
       <div className=" container p-5 text-lg max-w-[2000px] grid grid-cols-1 md:grid-cols-2 gap-16 text-center items-center  ">
-        <div className="bg-gray-400 h-[300px] text-left p-12 rounded-br-3xl  ">
+        <div className="bg-gray-400 h-[300px] text-left p-12 rounded-br-3xl rounded-tr-3xl rounded-tl-3xl  ">
           <p className="text-2xl font-semibold mb-2">SHOP MEMBERSHIPS</p>
           <p className="">
             Help people become familiar with the business and its offerings,
             creating a sense of connection and trust.
           </p>
-          <button className="mt-auto inline-block  hover:bg-purple-700 text-black py-2 px-4  text-sm transition border hover:border-black ">
+          <button className="mt-8 inline-block  hover:bg-purple-700 text-black py-2 px-4 rounded-br-3xl rounded-tr-3xl rounded-tl-3xl text-sm transition border hover:text-white  ">
             Coming Soon
           </button>
         </div>
-        <div className=" bg-black h-[300px] text-left  text-white items-center  p-12    ">
+        <div className=" bg-black h-[300px] text-left  text-white items-center p-12 rounded-br-3xl rounded-tr-3xl rounded-tl-3xl    ">
           <p className="text-2xl font-semibold mb-2">CHECK OUT OUR NEWSLETTE</p>
           <p>
             Subscribe to our newsletter for exclusive updates, tips, and offers
             delivered straight to your inbox!
           </p>
+          <button className="mt-4 inline-block hover:bg-purple-700 text-white  py-2 px-4 rounded-br-3xl rounded-tr-3xl rounded-tl-3xl text-sm transition border hover:border-black ">
+            Coming Soon
+          </button>
         </div>
       </div>
     </div>
