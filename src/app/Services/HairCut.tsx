@@ -179,8 +179,6 @@ export const HairCut = () => {
             id="time"
             name="time"
             required
-            min="09:00"
-            max="18:00"
             step="1800"
             className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
           />

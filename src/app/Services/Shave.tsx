@@ -6,17 +6,18 @@
      const [selectedService, setSelectedService] = useState("");
    
      const singleServices = [
-       { name: "Buzzcut/Beard Trim", time: "45 mins", price: "$43" },
-       { name: "Beard Shaping/Beard Fade", time: "1 hr", price: "$30" },
-       { name: "Hair Line-Up", time: "30 mins", price: "$25" },
-       { name: "Beard Line-Up", time: "45 mins", price: "$25" },
-       { name: "Haircut", time: "45 mins", price: "$58" },
+       { name: "straight razor shave", time: "45 mins", price: "$39" },
+       { name: "electric razors ", time: "1 hr", price: "$30" },
+       { name: "Full head shave", time: "30 mins", price: "$25" },
+       { name: "Cartridge Razor Shave", time: "45 mins", price: "$25" },
+       { name: "Hot Towel Shave", time: "45 mins", price: "$38" },
+       { name: "Facial Shave", time: "45 mins", price: "$44" },
      ];
    
      const comboServices = [
-       { name: "Line up hair + Beard", time: "1 hr", price: "$38" },
-       { name: "Haircut + Steam Razor Shave", time: "1 hr", price: "$78" },
-       { name: "Haircut + Beard Trim", time: "1 hr", price: "$68" },
+       { name: "Head shave + Beard shave", time: "1 hr", price: "$55" },
+       { name: "Beard shave + Steam Razor Shave", time: "1 hr", price: "$44" },
+       { name: "Beard Shave + electric razors", time: "1 hr", price: "$38" },
      ];
    
      const servicesToShow = category === "single" ? singleServices : comboServices;

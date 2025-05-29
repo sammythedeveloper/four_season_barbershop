@@ -23,7 +23,7 @@ const services = [
     image: Shave,
     description:
       "Treat yourself to a premium shave, where expert precision meets effortless smoothness.",
-    price: "$25",
+    price: "$50 | 45 - 50 Mins ",
     path: "/shave",
   },
   {
@@ -31,7 +31,7 @@ const services = [
     image: Press,
     description:
       "A smooth, sleek, and bouncy straight style with a hydrating steam treatment for extra moisture and shine.",
-    price: "$80",
+    price: "$80 | 2hrs",
     path: "/silkpress",
   },
   {
@@ -82,7 +82,7 @@ export const Service = () => {
               {service.path && (
                 <Link
                   href={service.path}
-                  className="mt-auto inline-block bg-black  hover:bg-purple-700 text-white py-2 px-4 rounded-md text-sm transition"
+                  className="mt-auto inline-block bg-black  hover:bg-purple-700 text-white py-2 px-4 rounded-md text-sm transition border hover:border-black "
                 >
                   BOOK NOW
                 </Link>
@@ -91,6 +91,20 @@ export const Service = () => {
           ))}
         </div>
       </div>
+      <div className=" p-10  max-w-[2000px]  gap-16 text-center grid grid-cols-2 items-center" >
+            <div className="bg-gray-400 h-[300px] items-center   " >
+            <p>
+            SHOP MEMBERSHIPS
+            Use this space to promote the business, its products or its services. Help people become familiar with the business and its offerings, creating a sense of connection and trust.
+            </p>
+            </div>
+            <div className=" bg-black h-[300px] text-white   " >
+              <p>
+              CHECK OUT OUR NEWSLETTER
+              Subscribe to our newsletter for exclusive updates, tips, and offers delivered straight to your inbox!
+              </p>
+            </div>
+          </div>
     </div>
   );
 };
