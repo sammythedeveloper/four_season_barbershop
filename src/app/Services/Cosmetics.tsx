@@ -6,8 +6,8 @@
    const [selectedService, setSelectedService] = useState("");
  
    const singleServices = [
-     { name: "Buzzcut/Beard Trim", time: "45 mins", price: "$43" },
-     { name: "Beard Shaping/Beard Fade", time: "1 hr", price: "$30" },
+     { name: "Wash", time: "15 mins", price: "$20" },
+     { name: "Color", time: "1 hr", price: "$45" },
      { name: "Hair Line-Up", time: "30 mins", price: "$25" },
      { name: "Beard Line-Up", time: "45 mins", price: "$25" },
      { name: "Haircut", time: "45 mins", price: "$58" },
