@@ -125,7 +125,8 @@ export const Braids = () => {
       </div>
 
       {/* Six P's Section */}
-      <div className="text-center my-6 text-black ">
+      <div className="text-center my-8 text-black ">
+        <p className=" text-xl " >Amenties</p>
         <div className=" grid sm:grid-cols-1 md:grid-cols-2  gap-4">
           <div className="flex items-center justify-center space-x-2">
             <Wifi className="h-6 w-6 text-blue-500" />
