@@ -24,6 +24,8 @@ const config: Config = {
       animation: {
         pulsegrid: "pulsegrid 8s ease-in-out infinite",
         "move-left": "move-left 90s linear infinite",
+        "spin-reverse-slow": "spin-reverse-slow 4s linear infinite",
+        "border-spin": "border-spin 4s linear infinite", // ✅ Added
       },
       keyframes: {
         pulsegrid: {

@@ -53,40 +53,17 @@ export const HairCut = () => {
         <label className="block text-purple-800 font-thin mb-1 text-base">
           Service Category
         </label>
-        <Select
-          options={options}
-          value={options.find((opt) => opt.value === category)}
-          onChange={(selectedOption) => {
-            if (selectedOption) {
-              setCategory(selectedOption.value);
-              setSelectedService("");
-            }
+        <select
+          className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+          value={category}
+          onChange={(e) => {
+            setCategory(e.target.value);
+            setSelectedService("");
           }}
-          className="react-select-container"
-          classNamePrefix="react-select"
-          styles={{
-            control: (base) => ({
-              ...base,
-              backgroundColor: "#fff",
-              borderColor: "#808080",
-              minHeight: "3rem",
-              boxShadow: "none",
-              padding: "0 0.25rem",
-            }),
-            menu: (base) => ({
-              ...base,
-              backgroundColor: "#fff",
-              color: "#374151",
-              zIndex: 20,
-            }),
-            option: (base, state) => ({
-              ...base,
-              backgroundColor: state.isFocused ? "#C084FC" : "#fff",
-              color: "#1f2937",
-              cursor: "pointer",
-            }),
-          }}
-        />
+        >
+          <option value="single">Single Services</option>
+          <option value="combo">Combo Services</option>
+        </select>
       </div>
 
       {/* Service Selection */}
@@ -95,23 +72,19 @@ export const HairCut = () => {
           Select a Service
         </label>
         <select
-          className="w-full h-12 px-4 py-2 text-base border border-gray-500 rounded focus:ring-blue-500 focus:border-blue-500"
+          className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
           value={selectedService}
           onChange={(e) => setSelectedService(e.target.value)}
-          name="service"
           required
         >
           <option value="" disabled>
             Select a service
           </option>
-          {servicesToShow.map((service, idx) => {
-            const label = `${service.name} – ${service.time} – ${service.price}`;
-            return (
-              <option key={idx} value={label}>
-                {label}
-              </option>
-            );
-          })}
+          {servicesToShow.map((service, idx) => (
+            <option key={idx} value={service.name}>
+              {`${service.name} – ${service.time} – ${service.price}`}
+            </option>
+          ))}
         </select>
       </div>
 
@@ -179,7 +152,6 @@ export const HairCut = () => {
             id="time"
             name="time"
             required
-            step="1800"
             className="w-full h-12 px-4 py-2 text-base border border-orange-300 rounded focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
@@ -213,7 +185,7 @@ export const HairCut = () => {
       {/* Submit Button */}
       <button
         type="submit"
-        className="w-full h-12 bg-orange-500 hover:bg-purple-700 text-white text-lg font-semibold rounded"
+        className="w-full h-12 bg-gray-600 hover:bg-purple-700 text-white text-lg font-semibold rounded"
       >
         Book Now
       </button>

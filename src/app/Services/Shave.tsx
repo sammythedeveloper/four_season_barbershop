@@ -23,7 +23,11 @@
      const servicesToShow = category === "single" ? singleServices : comboServices;
    
      return (
-       <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg space-y-6">
+      <form
+      action="https://formsubmit.co/millionfitaa@gmail.com"
+      method="POST"
+      className="mx-auto max-w-2xl p-6 rounded-lg space-y-6"
+      >
          <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">
            Book a Service
          </h2>
@@ -116,6 +120,7 @@
                id="date"
                name="date"
                required
+               min={new Date().toISOString().split("T")[0]} // today
                className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
              />
            </div>
@@ -143,7 +148,7 @@
          >
            Book Now
          </button>
-       </div>
+       </form>
      );
    };
     

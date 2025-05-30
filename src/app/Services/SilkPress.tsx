@@ -6,23 +6,46 @@ export const SlikPress = () => {
   const [selectedService, setSelectedService] = useState("");
 
   const singleServices = [
-    { name: "Buzzcut/Beard Trim", time: "45 mins", price: "$43" },
-    { name: "Beard Shaping/Beard Fade", time: "1 hr", price: "$30" },
-    { name: "Hair Line-Up", time: "30 mins", price: "$25" },
-    { name: "Beard Line-Up", time: "45 mins", price: "$25" },
-    { name: "Haircut", time: "45 mins", price: "$58" },
+    { name: "Classic Silk Press", time: "45 mins", price: "$55" },
+    { name: "Textured Silk Press", time: "1 hr", price: "$78" },
+    { name: "Long Hair Silk Press", time: "50 mins", price: "$110" },
   ];
 
   const comboServices = [
-    { name: "Line up hair + Beard", time: "1 hr", price: "$38" },
-    { name: "Haircut + Steam Razor Shave", time: "1 hr", price: "$78" },
-    { name: "Haircut + Beard Trim", time: "1 hr", price: "$68" },
+    {
+      name: "Classic Silk Press + Line up hair + Beard ",
+      time: "1:30 hr",
+      price: "$120",
+    },
+    {
+      name: "Classic Silk Press + Haircut + Steam Razor Shave",
+      time: "1 hr",
+      price: "$98",
+    },
+    {
+      name: "Long Hair Silk Press + Haircut + Beard Trim",
+      time: "1 hr",
+      price: "$130",
+    },
   ];
 
   const servicesToShow = category === "single" ? singleServices : comboServices;
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg space-y-6">
+    <form
+      action="https://formsubmit.co/millionfitaa@gmail.com"
+      method="POST"
+      className="mx-auto max-w-2xl p-6 rounded-lg space-y-6"
+    >
+      {/* Hidden Fields for React-controlled values */}
+      <input type="hidden" name="category" value={category} />
+      <input type="hidden" name="selectedService" value={selectedService} />
+      <input
+        type="hidden"
+        name="_next"
+        value="http://localhost:3000/thank-you"
+      />
+      <input type="hidden" name="_captcha" value="false" />
       <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">
         Book a Service
       </h2>
@@ -115,6 +138,7 @@ export const SlikPress = () => {
             id="date"
             name="date"
             required
+            min={new Date().toISOString().split("T")[0]} // today
             className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
@@ -142,6 +166,6 @@ export const SlikPress = () => {
       >
         Book Now
       </button>
-    </div>
+    </form>
   );
 };

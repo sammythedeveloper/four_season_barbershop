@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Wifi, Accessibility, Pets, CreditCard, Loyalty, ChildCare } from '@mui/icons-material';
+
 
 export const Braids = () => {
   const [selectedService, setSelectedService] = useState("");
@@ -19,7 +19,18 @@ export const Braids = () => {
   const servicesToShow = singleServices; // Always show single services
 
   return (
-    <div>
+    <form
+    action="https://formsubmit.co/millionfitaa@gmail.com"
+    method="POST"
+    className="mx-auto max-w-2xl p-6 rounded-lg space-y-6"
+    >
+      <input type="hidden" name="selectedService" value={selectedService} />
+      <input
+        type="hidden"
+        name="_next"
+        value="http://localhost:3000/thank-you"
+      />
+      <input type="hidden" name="_captcha" value="false" />
       <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg space-y-6">
         <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">
           Book a Service
@@ -95,6 +106,7 @@ export const Braids = () => {
               id="date"
               name="date"
               required
+              min={new Date().toISOString().split("T")[0]} // today
               className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
@@ -125,35 +137,7 @@ export const Braids = () => {
       </div>
 
       {/* Six P's Section */}
-      <div className="text-center my-8 text-black ">
-        <p className=" text-xl " >Amenties</p>
-        <div className=" grid sm:grid-cols-1 md:grid-cols-2  gap-4">
-          <div className="flex items-center justify-center space-x-2">
-            <Wifi className="h-6 w-6 text-blue-500" />
-            <p className="text-md font-thin">Wi-Fi</p>
-          </div>
-          <div className="flex items-center justify-center space-x-2">
-            <Accessibility className="h-6 w-6 text-green-500" />
-            <p className="text-md font-thin">Accessible for people with disabilities</p>
-          </div>
-          <div className="flex items-center justify-center space-x-2">
-            <Pets className="h-6 w-6 text-yellow-500" />
-            <p className="text-md font-thin">Pets Allowed</p>
-          </div>
-          <div className="flex items-center justify-center space-x-2">
-            <CreditCard className="h-6 w-6 text-purple-500" />
-            <p className="text-md font-thin">Credit cards accepted</p>
-          </div>
-          <div className="flex items-center justify-center space-x-2">
-            <Loyalty className="h-6 w-6 text-pink-500" />
-            <p className="text-md font-thin">Loyalty Program</p>
-          </div>
-          <div className="flex items-center justify-center space-x-2">
-            <ChildCare className="h-6 w-6 text-teal-500" />
-            <p className="text-md font-thin">Child-friendly</p>
-          </div>
-        </div>
-      </div>
-    </div>
+
+    </form>
   );
 }
