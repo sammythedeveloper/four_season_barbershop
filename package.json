@@ -8,11 +8,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -46,5 +45,5 @@
   "engines": {
     "node": ">=20 <21"
   },
-  "homepage": "https://your-username.github.io/four-season-barbershop"
+  "homepage": "https://sammythedeveloper.github.io/four-season-barbershop"
 }

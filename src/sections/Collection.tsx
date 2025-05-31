@@ -1,53 +1,32 @@
-import one from "@/assets/images/3.jpg";
-import two from "@/assets/images/2.jpg";
-import three from "@/assets/images/4.jpg";
-import four from "@/assets/images/four.jpg";
-import five from "@/assets/images/five.jpg";
-import six from "@/assets/images/6.jpg";
-import seven from "@/assets/images/7.jpg";
-import eight from "@/assets/images/8.jpg";
-import nine from "@/assets/images/12.jpg";
-import ten from "@/assets/images/11.jpg";
-import eleven from "@/assets/images/10.jpg";
+import one from "../../public/assets/images/3.jpg";
+import two from "../../public/assets/images/2.jpg";
+import three from "../../public/assets/images/4.jpg";
+import four from "../../public/assets/images/four.jpg";
+import five from "../../public/assets/images/five.jpg";
+import six from "../../public/assets/images/6.jpg";
+import seven from "../../public/assets/images/7.jpg";
+import eight from "../../public/assets/images/8.jpg";
+import nine from "../../public/assets/images/12.jpg";
+import ten from "../../public/assets/images/11.jpg";
+import eleven from "../../public/assets/images/10.jpg";
 import Image from "next/image";
 import { Fragment } from "react";
 import { Card } from "@/components/Card";
 
 const cuts = [
-  {
-    avatar: one,
-  },
-  {
-    avatar: two,
-  },
-  {
-    avatar: three,
-  },
-  {
-    avatar: four,
-  },
-  {
-    avatar: five,
-  },
-  {
-    avatar: six,
-  },
-  {
-    avatar: seven,
-  },
-  {
-    avatar: eight,
-  },
-  {
-    avatar: nine,
-  },
-  {
-    avatar: ten,
-  },
-  {
-    avatar: eleven,
-  },
+  { avatar: "/assets/images/3.jpg" },
+  { avatar: "/assets/images/2.jpg" },
+  { avatar: "/assets/images/4.jpg" },
+  { avatar: "/assets/images/four.jpg" },
+  { avatar: "/assets/images/five.jpg" },
+  { avatar: "/assets/images/6.jpg" },
+  { avatar: "/assets/images/7.jpg" },
+  { avatar: "/assets/images/8.jpg" },
+  { avatar: "/assets/images/12.jpg" },
+  { avatar: "/assets/images/11.jpg" },
+  { avatar: "/assets/images/10.jpg" },
 ];
+
 
 export const Collection = () => {
   return (
@@ -67,6 +46,8 @@ export const Collection = () => {
                         <Image
                           src={testimonial.avatar}
                           alt="Haircut style preview"
+                          width={300}     // required for static export
+                          height={400}  
                           className="max-h-full"
                         />
                       </div>

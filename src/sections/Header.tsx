@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Scissors from "@/assets/images/scissors.svg";
+import Scissors from "../../public/assets/images/scissors.svg";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Link from "next/link";
