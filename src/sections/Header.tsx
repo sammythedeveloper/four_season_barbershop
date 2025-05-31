@@ -31,8 +31,15 @@ export const Header = () => {
               >
                 Service & Pricing
               </Link>
-              <div className="hover:text-purple-700 cursor-pointer "> Studio Membership</div>
-              <div className="hover:text-purple-700 cursor-pointer " >Contact Us</div>
+              <Link
+                href="/#membership"
+                className="hover:text-purple-700 cursor-pointer "
+              >
+                Studio Membership
+              </Link>
+              <div className="hover:text-purple-700 cursor-pointer ">
+                Contact Us
+              </div>
               <div className="bg-white text-black rounded-full cursor-pointer  py-1.5 px-4 hover:bg-purple-700 hover:text-white">
                 Book Now
               </div>
@@ -58,11 +65,19 @@ export const Header = () => {
         {/* Mobile Dropdown */}
         {menuOpen && (
           <div className="md:hidden flex flex-col gap-4 text-sm px-4 pb-4 ">
-            <div className="  hover:bg-purple-500 cursor-pointer rounded-lg p-2 hover:text-white  " >Service & Pricing</div>
-            <div className="  hover:bg-purple-500 cursor-pointer rounded-lg p-2 hover:text-white       "   >Location</div>
-            <div className="  hover:bg-purple-500 cursor-pointer rounded-lg p-2  hover:text-white    "  >Studio Membership</div>
-            <div className="  hover:bg-purple-500 cursor-pointer rounded-lg p-2 hover:text-white     "  >Contact Us</div>
-            <div  className="bg-black text-white rounded-full py-1.5 px-4 text-center  hover:bg-purple-500 cursor-pointer    ">
+            <div className="  hover:bg-purple-500 cursor-pointer rounded-lg p-2 hover:text-white  ">
+              Service & Pricing
+            </div>
+            <div className="  hover:bg-purple-500 cursor-pointer rounded-lg p-2 hover:text-white       ">
+              Location
+            </div>
+            <div className="  hover:bg-purple-500 cursor-pointer rounded-lg p-2  hover:text-white    ">
+              Studio Membership
+            </div>
+            <div className="  hover:bg-purple-500 cursor-pointer rounded-lg p-2 hover:text-white     ">
+              Contact Us
+            </div>
+            <div className="bg-black text-white rounded-full py-1.5 px-4 text-center  hover:bg-purple-500 cursor-pointer    ">
               Book Now
             </div>
           </div>

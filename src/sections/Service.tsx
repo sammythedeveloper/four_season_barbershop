@@ -1,6 +1,13 @@
 "use client";
 import Link from "next/link";
-import { Wifi, Accessibility, Pets, CreditCard, Loyalty, ChildCare } from '@mui/icons-material';
+import {
+  Wifi,
+  Accessibility,
+  Pets,
+  CreditCard,
+  Loyalty,
+  ChildCare,
+} from "@mui/icons-material";
 
 import Hair from "@/assets/icons/haircut.svg";
 import Braids from "@/assets/icons/braids.svg";
@@ -96,28 +103,49 @@ export const Service = () => {
         </div>
       </div>
       <div className="text-center my-8 py-8 text-black bg-gray-200 h-auto ">
-  <p className="text-xl mb-6  ">Amenities</p>
-  <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 justify-center">
-    {[
-      { Icon: Wifi, label: "Wi-Fi", color: "text-blue-500" },
-      { Icon: Accessibility, label: "Accessible for people with disabilities", color: "text-green-500" },
-      { Icon: Pets, label: "Pets Allowed", color: "text-yellow-500" },
-      { Icon: CreditCard, label: "Credit cards accepted", color: "text-purple-500" },
-      { Icon: Loyalty, label: "Loyalty Program", color: "text-pink-500" },
-      { Icon: ChildCare, label: "Child-friendly", color: "text-teal-500" },
-    ].map(({ Icon, label, color }, idx) => (
-      <div
-        key={idx}
-        className="flex items-center justify-start space-x-3 max-w-[320px] mx-auto"
-      >
-        <Icon className={`h-6 w-6 ${color}`} />
-        <p className="text-md font-thin text-left">{label}</p>
+        <p className="text-xl mb-6  ">Amenities</p>
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 justify-center">
+          {[
+            { Icon: Wifi, label: "Wi-Fi", color: "text-blue-500" },
+            {
+              Icon: Accessibility,
+              label: "Accessible for people with disabilities",
+              color: "text-green-500",
+            },
+            { Icon: Pets, label: "Pets Allowed", color: "text-yellow-500" },
+            {
+              Icon: CreditCard,
+              label: "Credit cards accepted",
+              color: "text-purple-500",
+            },
+            { Icon: Loyalty, label: "Loyalty Program", color: "text-pink-500" },
+            {
+              Icon: ChildCare,
+              label: "Child-friendly",
+              color: "text-teal-500",
+            },
+          ].map(({ Icon, label, color }, idx) => (
+            <div
+              key={idx}
+              className="flex items-center justify-start space-x-3 max-w-[320px] mx-auto"
+            >
+              <Icon className={`h-6 w-6 ${color}`} />
+              <p className="text-md font-thin text-left">{label}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
 
-
+      <div
+        id="membership"
+        className="m-10 items-center text-center text-2xl md:text-3xl font-extrabold text-black uppercase"
+      >
+        <p className="p-10">Stay Connected with Us</p>
+        <p className=" text-md font-normal">
+          Join the Community Explore Membership and check out latest updates to
+          stay connected and Grow.
+        </p>
+      </div>
       <div className=" container p-5 text-lg max-w-[2000px] grid grid-cols-1 md:grid-cols-2 gap-16 text-center items-center  ">
         <div className="bg-gray-400 h-[300px] text-left p-12 rounded-br-3xl rounded-tr-3xl rounded-tl-3xl  ">
           <p className="text-2xl font-semibold mb-2">SHOP MEMBERSHIPS</p>

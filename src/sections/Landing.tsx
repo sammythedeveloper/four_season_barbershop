@@ -30,7 +30,7 @@ export const Landing = () => {
         <p className="text-4xl md:text-6xl font-extrabold text-black">
           WE ARE FOUR SEASON STUDIOS
         </p>
-        <p className=" text-center justify-center ">
+        <p className=" text-center justify-center  ">
           With a diverse team of skilled barbers, we offer a level of expertise
           and individuality that sets us apart. At Four Season Studios, it’s
           about more than just a haircut – it’s about setting a new standard.

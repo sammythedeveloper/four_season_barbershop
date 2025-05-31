@@ -41,7 +41,7 @@ export const Footer = () => {
       </div>
 
       <div className="mt-10 border-t border-black pt-4 text-center text-sm text-black">
-        &copy; 2025 BarberX. All rights reserved.
+        &copy; 2025 FourSeasonBarber. All rights reserved.
       </div>
     </footer>
   );
