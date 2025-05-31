@@ -3,9 +3,12 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
+    "./public/**/*.html",         // For any static HTML in public
+    "./out/**/*.html",            // ✅ Needed for Netlify static build output
+    "./out/**/*.js",              // ✅ JS output from next export (tailwind might purge otherwise)
   ],
   theme: {
     screens: {
@@ -22,13 +25,13 @@ const config: Config = {
     },
     extend: {
       colors: {
-        gold: "#FFD700", // ✅ correctly placed
+        gold: "#FFD700",
       },
       animation: {
         pulsegrid: "pulsegrid 8s ease-in-out infinite",
         "move-left": "move-left 90s linear infinite",
         "spin-reverse-slow": "spin-reverse-slow 4s linear infinite",
-        "border-spin": "border-spin 4s linear infinite", // ✅ Added
+        "border-spin": "border-spin 4s linear infinite",
       },
       keyframes: {
         pulsegrid: {
@@ -42,20 +45,12 @@ const config: Config = {
           },
         },
         "move-left": {
-          "0%": {
-            transform: "translateX(0%)",
-          },
-          "100%": {
-            transform: "translateX(-50%)",
-          },
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
         },
         "move-right": {
-          "0%": {
-            transform: "translateX(-50%)",
-          },
-          "100%": {
-            transform: "translateX(0%)",
-          },
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0%)" },
         },
       },
     },
