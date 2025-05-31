@@ -1,13 +1,6 @@
 import Image from "next/image";
-import AboutIcon from "../../public/assets/images/download.svg";
-import StartIcon from "../../public/assets/images/razor.svg";
 import { HeroOrbit } from "@/components/Orbit";
-import SparkleIcon from "../../public/assets/images/scissors.svg";
-// import Blade from "../../public/assets/images/blade.svg";
-// import Comb from "../../public/assets/images/both.svg";
-import Shampoo from "../../public/assets/images/shampoo.svg";
-// import Clean from "../../public/assets/images/clean.svg";
-// import Shaver from "../../public/assets/images/shaver.svg";
+
 export const Landing = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-white relative overflow-hidden ">
