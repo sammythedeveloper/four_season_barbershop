@@ -57,7 +57,7 @@ export const Vip = () => {
         value="http://localhost:3000/thank-you"
       />
       <input type="hidden" name="_captcha" value="false" />
-      <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">
+      <h2 className="text-3xl font-bold mb-4 text-gold text-center">
        <DiamondIcon/> Book a VIP Service
       </h2>
 
@@ -155,7 +155,7 @@ export const Vip = () => {
       {/* Submit Button */}
       <button
         type="submit"
-        className="w-full  h-12 bg-purple-700 hover:bg-purple-800 text-white text-lg font-semibold rounded"
+        className="w-full  h-12 bg-gold hover:bg-purple-800 text-black text-lg hover:text-gold font-semibold rounded"
       >
         Book your VIP Experience
       </button>

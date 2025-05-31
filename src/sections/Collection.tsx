@@ -55,18 +55,18 @@ export const Collection = () => {
       <div className="container">
         <div className=" mt-5 lg:mt-20 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 -my-4  ">
           <div className=" flex gap-8 pr-8 flex-none animate-move-left [animation-duration:80s] hover:[animation-play-state:paused] ">
-            {[...new Array(2)].fill(0).map((_, index) => (
-              <Fragment key={index}>
-                {cuts.map((testimonial) => (
+            {[...new Array(2)].fill(0).map((_, outerIndex) => (
+              <Fragment key={outerIndex}>
+                {cuts.map((testimonial, innerIndex) => (
                   <Card
-                    key={""}
-                    className="max-w-xs md:max-w-md p-6  md:p-8 hover:-rotate-3 transition duration-400 "
+                    key={`card-${outerIndex}-${innerIndex}`} // ✅ unique key using both indexes
+                    className="max-w-xs md:max-w-md p-6  md:p-8 hover:-rotate-3 transition duration-400"
                   >
                     <div className="flex gap-4 items-center">
                       <div className="size-648 inline-flex items-center justify-center ">
                         <Image
                           src={testimonial.avatar}
-                          alt={""}
+                          alt="Haircut style preview"
                           className="max-h-full"
                         />
                       </div>

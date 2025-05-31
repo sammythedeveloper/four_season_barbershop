@@ -21,6 +21,9 @@ const config: Config = {
       },
     },
     extend: {
+      colors: {
+        gold: "#FFD700", // ✅ correctly placed
+      },
       animation: {
         pulsegrid: "pulsegrid 8s ease-in-out infinite",
         "move-left": "move-left 90s linear infinite",
