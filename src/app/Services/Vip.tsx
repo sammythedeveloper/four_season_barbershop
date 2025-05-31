@@ -157,7 +157,7 @@ export const Vip = () => {
         type="submit"
         className="w-full  h-12 bg-purple-700 hover:bg-purple-800 text-white text-lg font-semibold rounded"
       >
-        Book VIP Experience
+        Book your VIP Experience
       </button>
     </form>
   );

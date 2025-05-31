@@ -40,9 +40,12 @@ export const Header = () => {
               <div className="hover:text-purple-700 cursor-pointer ">
                 Contact Us
               </div>
-              <div className="bg-white text-black rounded-full cursor-pointer  py-1.5 px-4 hover:bg-purple-700 hover:text-white">
+              <Link
+                href="/#services"
+                className="bg-white text-black rounded-full cursor-pointer  py-1.5 px-4 hover:bg-purple-700 hover:text-white "
+              >
                 Book Now
-              </div>
+              </Link>
             </div>
           </div>
 
@@ -65,21 +68,31 @@ export const Header = () => {
         {/* Mobile Dropdown */}
         {menuOpen && (
           <div className="md:hidden flex flex-col gap-4 text-sm px-4 pb-4 ">
-            <div className="  hover:bg-purple-500 cursor-pointer rounded-lg p-2 hover:text-white  ">
+            <Link
+              href="/#services"
+              scroll={true}
+              className=" hover:bg-purple-500 cursor-pointer rounded-lg p-2 hover:text-white   "
+            >
               Service & Pricing
-            </div>
+            </Link>
             <div className="  hover:bg-purple-500 cursor-pointer rounded-lg p-2 hover:text-white       ">
               Location
             </div>
-            <div className="  hover:bg-purple-500 cursor-pointer rounded-lg p-2  hover:text-white    ">
+            <Link
+              href="/#membership"
+              className=" hover:bg-purple-500 cursor-pointer rounded-lg p-2  hover:text-white   "
+            >
               Studio Membership
-            </div>
+            </Link>
             <div className="  hover:bg-purple-500 cursor-pointer rounded-lg p-2 hover:text-white     ">
               Contact Us
             </div>
-            <div className="bg-black text-white rounded-full py-1.5 px-4 text-center  hover:bg-purple-500 cursor-pointer    ">
+            <Link
+              href="/#services"
+              className="bg-black text-white rounded-full py-1.5 px-4 text-center  hover:bg-purple-500 cursor-pointer   "
+            >
               Book Now
-            </div>
+            </Link>
           </div>
         )}
       </div>

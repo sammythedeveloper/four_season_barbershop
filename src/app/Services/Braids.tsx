@@ -33,7 +33,7 @@ export const Braids = () => {
       <input type="hidden" name="_captcha" value="false" />
       <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg space-y-6">
         <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">
-          Book a Service
+          Book a Braids Service
         </h2>
 
         {/* Service Selection */}
