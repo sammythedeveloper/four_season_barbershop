@@ -1,14 +1,3 @@
-import one from "../../public/assets/images/3.jpg";
-import two from "../../public/assets/images/2.jpg";
-import three from "../../public/assets/images/4.jpg";
-import four from "../../public/assets/images/four.jpg";
-import five from "../../public/assets/images/five.jpg";
-import six from "../../public/assets/images/6.jpg";
-import seven from "../../public/assets/images/7.jpg";
-import eight from "../../public/assets/images/8.jpg";
-import nine from "../../public/assets/images/12.jpg";
-import ten from "../../public/assets/images/11.jpg";
-import eleven from "../../public/assets/images/10.jpg";
 import Image from "next/image";
 import { Fragment } from "react";
 import { Card } from "@/components/Card";

@@ -1,12 +1,13 @@
+import Image from "next/image";
 import AboutIcon from "../../public/assets/images/download.svg";
 import StartIcon from "../../public/assets/images/razor.svg";
 import { HeroOrbit } from "@/components/Orbit";
 import SparkleIcon from "../../public/assets/images/scissors.svg";
-import Blade from "../../public/assets/images/blade.svg";
-import Comb from "../../public/assets/images/both.svg";
+// import Blade from "../../public/assets/images/blade.svg";
+// import Comb from "../../public/assets/images/both.svg";
 import Shampoo from "../../public/assets/images/shampoo.svg";
-import Clean from "../../public/assets/images/clean.svg";
-import Shaver from "../../public/assets/images/shaver.svg";
+// import Clean from "../../public/assets/images/clean.svg";
+// import Shaver from "../../public/assets/images/shaver.svg";
 export const Landing = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-white relative overflow-hidden ">
@@ -35,7 +36,12 @@ export const Landing = () => {
           and individuality that sets us apart. At Four Season Studios, it’s
           about more than just a haircut – it’s about setting a new standard.
         </p>
-        <AboutIcon className="" />
+        <Image
+          src="/assets/images/download.svg"
+          alt="About"
+          className="  text-emerald-300/20 "
+          width={696} height={264}
+        />
         <p className="mt-4 text-2xl md:text-3xl font-extrabold text-black uppercase ">
           Experience finest grooming with precision haircuts, fades, shaves, and
           beard trims.
@@ -53,7 +59,12 @@ export const Landing = () => {
             shouldSpin
             spinDuration="3s"
           >
-            <Comb className=" size-16 text-emerald-300/20" />
+            <Image
+              src="/assets/images/both.svg"
+              alt="Both"
+              className=" size-10 text-emerald-300/20 "
+              width={64} height={64}
+            />
           </HeroOrbit>
           <HeroOrbit
             size={530}
@@ -63,7 +74,12 @@ export const Landing = () => {
             shouldSpin
             spinDuration="3s"
           >
-            <Blade className=" size-14 text-emerald-300/20" />
+            <Image
+              src="/assets/images/blade.svg"
+              alt="Blade"
+              className=" size-20 text-emerald-300/20 "
+              width={64} height={64}
+            />
           </HeroOrbit>
           <HeroOrbit
             size={530}
@@ -73,7 +89,12 @@ export const Landing = () => {
             shouldSpin
             spinDuration="3s"
           >
-            <Shaver className=" size-10 text-emerald-300/20" />
+            <Image
+              src="/assets/images/shaver.svg"
+              alt="shaver"
+              className=" size-12 text-emerald-300/20 "
+              width={64} height={64}
+            />
           </HeroOrbit>
           <HeroOrbit size={350} rotation={-5} shouldOrbit orbitDuration="42s">
             <div className=" size-2 rounded-full bg-emerald-300/20" />
@@ -94,7 +115,12 @@ export const Landing = () => {
             shouldSpin
             spinDuration="6s"
           >
-            <StartIcon className=" size-20 text-emerald-300" />
+            <Image
+              src="/assets/images/razor.svg"
+              alt="Razor"
+              className=" size-20 text-emerald-300/20 "
+              width={64} height={64}
+            />
           </HeroOrbit>
           <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
             <div className=" size-2 rounded-full bg-emerald-300/20" />
@@ -107,7 +133,12 @@ export const Landing = () => {
             shouldSpin
             spinDuration="3s"
           >
-            <Clean className=" size-14 text-emerald-300/20" />
+            <Image
+              src="/assets/images/clean.svg"
+              alt="clean"
+              className=" size-20 text-emerald-300/20 "
+              width={64} height={64}
+            />
           </HeroOrbit>
           <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
             <div className=" size-3 rounded-full" />
@@ -120,7 +151,12 @@ export const Landing = () => {
             shouldSpin
             spinDuration="3s"
           >
-            <SparkleIcon className=" size-14 text-emerald-300/20" />
+            <Image
+              src="/assets/images/scissors.svg"
+              alt="Blade"
+              className=" size-20 text-emerald-300/20 "
+              width={64} height={64}
+            />
           </HeroOrbit>
           <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
             <div className=" size-3 rounded-full" />
@@ -133,7 +169,12 @@ export const Landing = () => {
             shouldSpin
             spinDuration="6s"
           >
-            <Shampoo className=" size-28 text-emerald-300" />
+            <Image
+              src="/assets/images/shampoo.svg"
+              alt="Shampoo"
+              className=" size-20 text-emerald-300/20 "
+              width={64} height={64}
+            />
           </HeroOrbit>
         </div>
       </div>
