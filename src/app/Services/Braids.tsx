@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 
-
 export const Braids = () => {
   const [selectedService, setSelectedService] = useState("");
 
@@ -20,9 +19,9 @@ export const Braids = () => {
 
   return (
     <form
-    action="https://formsubmit.co/millionfitaa@gmail.com"
-    method="POST"
-    className="mx-auto max-w-2xl p-6 rounded-lg space-y-6"
+      action="https://formsubmit.co/millionfitaa@gmail.com"
+      method="POST"
+      className="mx-auto max-w-2xl p-6 rounded-lg space-y-6"
     >
       <input type="hidden" name="selectedService" value={selectedService} />
       <input
@@ -125,6 +124,30 @@ export const Braids = () => {
               className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
+          {/* Consent */}
+          <div className="flex items-start gap-2 col-span-full">
+            <input
+              type="checkbox"
+              id="consent"
+              name="consent"
+              required
+              className="mt-1 accent-orange-500 w-4 h-4"
+            />
+            <label
+              htmlFor="consent"
+              className="text-sm text-gray-700 font-thin leading-relaxed"
+            >
+              I agree to receive communications from Four Season Barber. By
+              submitting this form, you agree to the Four Season Barbershop
+              <a
+                href="/privacy-policy"
+                className="text-orange-500 underline hover:text-orange-400 ml-1"
+              >
+                Privacy Policy
+              </a>
+              .
+            </label>
+          </div>
         </div>
 
         {/* Submit Button */}
@@ -137,7 +160,6 @@ export const Braids = () => {
       </div>
 
       {/* Six P's Section */}
-
     </form>
   );
-}
+};

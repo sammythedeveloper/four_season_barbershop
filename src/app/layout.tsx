@@ -15,16 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <head>
-      {process.env.NODE_ENV === "production" && (
+      <head>
         <base href="/four_season_barbershop/" />
-      )}
-    </head>
-    <body>
-      <Header />
-      {children}
-      <Footer />
-    </body>
-  </html>
+      </head>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
+    </html>
   );
 }

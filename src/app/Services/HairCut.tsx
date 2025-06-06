@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-select";
 
 export const HairCut = () => {
@@ -11,6 +11,12 @@ export const HairCut = () => {
     { value: "single", label: "Single Services" },
     { value: "combo", label: "Combo Services" },
   ];
+
+  const [minDate, setMinDate] = useState("");
+
+  useEffect(() => {
+    setMinDate(new Date().toISOString().split("T")[0]);
+  }, []);
 
   const singleServices = [
     { name: "Buzzcut/Beard Trim", time: "45 mins", price: "$43" },
@@ -136,7 +142,7 @@ export const HairCut = () => {
             id="date"
             name="date"
             required
-            min={new Date().toISOString().split("T")[0]} // today
+            min={minDate}
             className="w-full h-12 px-4 py-2 text-base border border-gray-500 rounded focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
