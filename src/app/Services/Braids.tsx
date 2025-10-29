@@ -5,43 +5,38 @@ export const Braids = () => {
   const [selectedService, setSelectedService] = useState("");
 
   const singleServices = [
-    {
-      name: "Retwist Locs (Top of Head Only)",
-      time: "45 mins",
-      price: "$100+",
-    },
+    { name: "Retwist Locs (Top of Head Only)", time: "45 mins", price: "$100+" },
     { name: "Retwist Locs (Full Head)", time: "1 hr", price: "$150" },
     { name: "Natural Twist", time: "30 mins", price: "$115" },
     { name: "Beard Line-Up", time: "45 mins", price: "$25" },
   ];
 
-  const servicesToShow = singleServices; // Always show single services
-
   return (
-    <form
-      action="https://formsubmit.co/millionfitaa@gmail.com"
-      method="POST"
-      className="mx-auto max-w-2xl p-6 rounded-lg space-y-6"
-    >
-      <input type="hidden" name="selectedService" value={selectedService} />
-      <input
-        type="hidden"
-        name="_next"
-        value="http://localhost:3000/thank-you"
-      />
-      <input type="hidden" name="_captcha" value="false" />
-      <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg space-y-6">
-        <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center py-16 px-4">
+      <form
+        action="https://formsubmit.co/millionfitaa@gmail.com"
+        method="POST"
+        className="w-full max-w-3xl bg-white rounded-3xl shadow-2xl p-10 space-y-8"
+      >
+        <input type="hidden" name="selectedService" value={selectedService} />
+        <input type="hidden" name="_next" value="http://localhost:3000/thank-you" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        {/* Header */}
+        <h2 className="text-4xl font-extrabold text-gray-900 text-center mb-6">
           Book a Braids Service
         </h2>
+        <p className="text-center text-gray-600 mb-8">
+          Select your service, pick a date and time, and let us give you the perfect style!
+        </p>
 
         {/* Service Selection */}
         <div>
-          <label className="block text-gray-700 font-medium mb-1 text-base">
+          <label className="block text-gray-700 font-semibold mb-2 text-lg">
             Select a Service
           </label>
           <select
-            className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+            className="w-full h-14 px-5 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition text-gray-800"
             value={selectedService}
             onChange={(e) => setSelectedService(e.target.value)}
             required
@@ -49,7 +44,7 @@ export const Braids = () => {
             <option value="" disabled>
               Select a service
             </option>
-            {servicesToShow.map((service, idx) => (
+            {singleServices.map((service, idx) => (
               <option key={idx} value={service.name}>
                 {`${service.name} – ${service.time} – ${service.price}`}
               </option>
@@ -57,109 +52,87 @@ export const Braids = () => {
           </select>
         </div>
 
-        {/* Name */}
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-gray-700 font-medium mb-1 text-base"
-          >
-            Full Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
-          />
-        </div>
-
-        {/* Phone */}
-        <div>
-          <label
-            htmlFor="phone"
-            className="block text-gray-700 font-medium mb-1 text-base"
-          >
-            Phone Number
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            required
-            className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
-          />
+        {/* Name & Phone */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-gray-700 font-semibold mb-2 text-lg">
+              Full Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="John Doe"
+              className="w-full h-14 px-5 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 font-semibold mb-2 text-lg">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              name="phone"
+              required
+              placeholder="+1 234 567 890"
+              className="w-full h-14 px-5 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition"
+            />
+          </div>
         </div>
 
         {/* Date & Time */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label
-              htmlFor="date"
-              className="block text-gray-700 font-medium mb-1 text-base"
-            >
+            <label className="block text-gray-700 font-semibold mb-2 text-lg">
               Preferred Date
             </label>
             <input
               type="date"
-              id="date"
               name="date"
               required
-              min={new Date().toISOString().split("T")[0]} // today
-              className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+              min={new Date().toISOString().split("T")[0]}
+              className="w-full h-14 px-5 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition"
             />
           </div>
           <div>
-            <label
-              htmlFor="time"
-              className="block text-gray-700 font-medium mb-1 text-base"
-            >
+            <label className="block text-gray-700 font-semibold mb-2 text-lg">
               Preferred Time
             </label>
             <input
               type="time"
-              id="time"
               name="time"
               required
-              className="w-full h-12 px-4 py-2 text-base border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+              className="w-full h-14 px-5 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition"
             />
           </div>
-          {/* Consent */}
-          <div className="flex items-start gap-2 col-span-full">
-            <input
-              type="checkbox"
-              id="consent"
-              name="consent"
-              required
-              className="mt-1 accent-orange-500 w-4 h-4"
-            />
-            <label
-              htmlFor="consent"
-              className="text-sm text-gray-700 font-thin leading-relaxed"
-            >
-              I agree to receive communications from Four Season Barber. By
-              submitting this form, you agree to the Four Season Barbershop
-              <a
-                href="/privacy-policy"
-                className="text-orange-500 underline hover:text-orange-400 ml-1"
-              >
-                Privacy Policy
-              </a>
-              .
-            </label>
-          </div>
+        </div>
+
+        {/* Consent */}
+        <div className="flex items-start gap-3">
+          <input
+            type="checkbox"
+            name="consent"
+            required
+            className="mt-2 accent-emerald-500 w-5 h-5"
+          />
+          <label className="text-gray-700 text-sm leading-relaxed">
+            I agree to receive communications from Four Season Barbershop. By
+            submitting this form, you agree to our{" "}
+            <a href="/privacy-policy" className="text-emerald-500 underline">
+              Privacy Policy
+            </a>
+            .
+          </label>
         </div>
 
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full h-12 bg-gray-600 hover:bg-purple-700 text-white text-lg font-thin rounded"
+          className="w-full h-14 bg-gradient-to-r from-emerald-500 to-purple-600 text-white text-xl font-semibold rounded-xl shadow-lg hover:scale-105 transition transform"
         >
           Book Now
         </button>
-      </div>
-
-      {/* Six P's Section */}
-    </form>
+      </form>
+    </div>
   );
 };

@@ -4,8 +4,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Four Season Barbershop",
+  title: "4✂️Season",
   description: "Elite grooming experience",
+  icons: {
+    icon: "/barb.svg",
+  },
 };
 
 export default function RootLayout({
