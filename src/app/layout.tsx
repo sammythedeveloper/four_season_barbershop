@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "4✂️Season",
+  title: "season ✂️ Clip",
   description: "Elite grooming experience",
   icons: {
     icon: "/barb.svg",

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Link from "next/link";
 
 export const Braids = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -22,7 +23,11 @@ export const Braids = () => {
   ]);
 
   const singleServices = [
-    { name: "Retwist Locs (Top of Head Only)", time: "45 mins", price: "$100+" },
+    {
+      name: "Retwist Locs (Top of Head Only)",
+      time: "45 mins",
+      price: "$100+",
+    },
     { name: "Retwist Locs (Full Head)", time: "1 hr", price: "$150" },
     { name: "Natural Twist", time: "30 mins", price: "$115" },
     { name: "Beard Line-Up", time: "45 mins", price: "$25" },
@@ -92,7 +97,9 @@ export const Braids = () => {
 
       filteredTimes = filteredTimes.filter((t) => {
         const [hour, minute] = t.value.split(":").map(Number);
-        return hour > currentHour || (hour === currentHour && minute > currentMinute);
+        return (
+          hour > currentHour || (hour === currentHour && minute > currentMinute)
+        );
       });
     }
 
@@ -106,7 +113,8 @@ export const Braids = () => {
         Book a Braids Service
       </h2>
       <p className="text-center text-gray-600 mb-8">
-        Select your service, pick a date and time, and let us give you the perfect style!
+        Select your service, pick a date and time, and let us give you the
+        perfect style!
       </p>
       <div className="min-h-screen flex items-center justify-center py-16 px-4">
         <form
@@ -114,14 +122,26 @@ export const Braids = () => {
           method="POST"
           className="w-full max-w-3xl bg-white rounded-3xl shadow-2xl p-10 space-y-8"
         >
-          <input type="hidden" name="selectedService" value={selectedService?.value || ""} />
+          <input
+            type="hidden"
+            name="selectedService"
+            value={selectedService?.value || ""}
+          />
           <input
             type="hidden"
             name="selectedDate"
             value={selectedDate ? selectedDate.toISOString().split("T")[0] : ""}
           />
-          <input type="hidden" name="selectedTime" value={selectedTime?.value || ""} />
-          <input type="hidden" name="_next" value="http://localhost:3000/thank-you" />
+          <input
+            type="hidden"
+            name="selectedTime"
+            value={selectedTime?.value || ""}
+          />
+          <input
+            type="hidden"
+            name="_next"
+            value="http://localhost:3000/thank-you"
+          />
           <input type="hidden" name="_captcha" value="false" />
 
           {/* Service Dropdown */}
@@ -207,9 +227,12 @@ export const Braids = () => {
             <label className="text-gray-700 text-sm leading-relaxed">
               I agree to receive communications from Four Season Barbershop. By
               submitting this form, you agree to our{" "}
-              <a href="/privacy-policy" className="text-emerald-500 underline">
+              <Link
+                href="/privacy-policy"
+                className="text-emerald-500 underline"
+              >
                 Privacy Policy
-              </a>
+              </Link>
               .
             </label>
           </div>

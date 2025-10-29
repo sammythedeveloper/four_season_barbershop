@@ -16,7 +16,6 @@ const cuts = [
   { avatar: "/assets/images/10.jpg" },
 ];
 
-
 export const Collection = () => {
   return (
     <div className="py-16 lg:py-24 ">
@@ -35,8 +34,8 @@ export const Collection = () => {
                         <Image
                           src={testimonial.avatar}
                           alt="Haircut style preview"
-                          width={300}     // required for static export
-                          height={400}  
+                          width={300} // required for static export
+                          height={400}
                           className="max-h-full"
                         />
                       </div>
