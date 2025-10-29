@@ -47,7 +47,7 @@ export const Header = () => {
             href="/#services"
             className="bg-black text-white rounded-full py-2 px-6 hover:bg-purple-700 hover:shadow-lg transition duration-300"
           >
-            Book Now
+            Book
           </Link>
         </nav>
 
