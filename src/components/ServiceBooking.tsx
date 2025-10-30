@@ -80,46 +80,43 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
     }),
   };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
     e.preventDefault();
-
+  
+    const form = e.currentTarget;
+  
+    // Cast the inputs correctly
+    const nameInput = form.elements.namedItem("name") as HTMLInputElement;
+    const emailInput = form.elements.namedItem("email") as HTMLInputElement;
+    const phoneInput = form.elements.namedItem("phone") as HTMLInputElement;
+  
     if (!selectedService || !selectedDate || !selectedTime) {
       alert("Please select service, date and time!");
       return;
     }
-
-    const form = e.currentTarget;
-
+  
     const templateParams = {
-      email: form.email.value, // ✅ must match {{email}} in your EmailJS template
-      name: form.name.value,
+      email: emailInput.value, // must match {{email}} in EmailJS template
+      name: nameInput.value,
       service: selectedService.value,
       date: selectedDate.toISOString().split("T")[0],
       time: selectedTime.value,
+      phone: phoneInput.value,
     };
-    console.log(
-      "ENV:",
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-    );
+  
     try {
-      await send(serviceID, templateID, templateParams, publicKey)
-        .then((res) => console.log("Email sent", res))
-        .catch((err) => console.error("Email error", err));
-
-      router.push("/thank-you");
-      form.reset();
-      setSelectedService(null);
-      setSelectedDate(null);
-      setSelectedTime(null);
+      await send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      // Navigate to thank-you page here
     } catch (err) {
-      console.error(err);
+      console.error("Email error", err);
       alert("Failed to send email. Check your keys and template.");
     }
   };
+  
 
   useEffect(() => {
     if (!selectedDate) return;
