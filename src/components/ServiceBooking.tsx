@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
+import { useRouter } from "next/navigation";
 // @ts-ignore
 import "react-datepicker/dist/react-datepicker.css";
 import Link from "next/link";
@@ -32,6 +33,7 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
   services,
   gallery,
 }) => {
+  const router = useRouter(); // ✅ must be inside the component
   const [selectedService, setSelectedService] = useState<any>(null);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<any>(null);
@@ -108,7 +110,7 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
         .then((res) => console.log("Email sent", res))
         .catch((err) => console.error("Email error", err));
 
-      alert("Email sent successfully!");
+      router.push("/thank-you");
       form.reset();
       setSelectedService(null);
       setSelectedDate(null);

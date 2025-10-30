@@ -6,7 +6,8 @@ export default function ThankYouPage() {
       <div className="text-center">
         <h1 className="text-4xl font-bold text-purple-800 mb-4">Thank You!</h1>
         <p className="text-lg text-gray-700">
-          Your appointment has been successfully booked.
+          Your appointment has been successfully booked.Check you email or spam
+          to get vertfication.
         </p>
         <p className="text-md text-gray-500 mt-2">
           We look forward to seeing you soon.
