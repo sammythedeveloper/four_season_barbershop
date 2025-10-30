@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 import { useRouter } from "next/navigation";
@@ -33,7 +33,7 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
   services,
   gallery,
 }) => {
-  const router = useRouter(); // ✅ must be inside the component
+  const router = useRouter();
   const [selectedService, setSelectedService] = useState<any>(null);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<any>(null);
@@ -79,58 +79,56 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
       boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
     }),
   };
+
+  // ✅ Refs for form inputs
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
     e.preventDefault();
-  
+
     if (!selectedService || !selectedDate || !selectedTime) {
       alert("Please select service, date and time!");
       return;
     }
-  
-    const form = e.currentTarget;
-  
-    // ✅ Cast inputs to HTMLInputElement
-    const nameInput = form.elements.namedItem("name") as HTMLInputElement | null;
-    const emailInput = form.elements.namedItem("email") as HTMLInputElement | null;
-  
-    if (!nameInput || !emailInput) {
-      alert("Form elements not found. Please reload the page and try again.");
+
+    if (!nameRef.current || !emailRef.current) {
+      alert("Form inputs not loaded properly. Please reload the page.");
       return;
     }
+
     const templateParams = {
-      email: emailInput.value, // must match {{email}} in your EmailJS template
-      name: nameInput.value,
+      email: emailRef.current.value, // must match {{email}} in EmailJS template
+      name: nameRef.current.value,
       service: selectedService.value,
       date: selectedDate.toISOString().split("T")[0],
       time: selectedTime.value,
     };
-  
+
     console.log(
       "ENV:",
       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
     );
-  
+
     try {
-      await send(serviceID, templateID, templateParams, publicKey)
-        .then((res) => console.log("Email sent", res))
-        .catch((err) => console.error("Email error", err));
-  
+      await send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
       router.push("/thank-you"); // ✅ navigate after successful booking
-      form.reset();
       setSelectedService(null);
       setSelectedDate(null);
       setSelectedTime(null);
+      e.currentTarget.reset();
     } catch (err) {
-      console.error(err);
+      console.error("Email error", err);
       alert("Failed to send email. Check your keys and template.");
     }
   };
-  
 
   useEffect(() => {
     if (!selectedDate) return;
@@ -205,8 +203,6 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
       <div className="min-h-screen flex items-center justify-center py-10 px-4">
         <form
           onSubmit={handleSubmit}
-          action="https://formsubmit.co/millionfitaa@gmail.com"
-          method="POST"
           className="w-full max-w-3xl bg-white rounded-3xl shadow-2xl p-10 space-y-8"
         >
           <input
@@ -224,12 +220,6 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
             name="selectedTime"
             value={selectedTime?.value || ""}
           />
-          <input
-            type="hidden"
-            name="_next"
-            value="http://localhost:3000/thank-you"
-          />
-          <input type="hidden" name="_captcha" value="false" />
 
           <div>
             <label className="block text-gray-700 font-semibold mb-2 text-lg">
@@ -252,6 +242,7 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
               <input
                 type="text"
                 name="name"
+                ref={nameRef} // ✅ attach ref
                 required
                 placeholder="John Doe"
                 className="w-full h-14 px-5 border border-gray-300 rounded-full focus:ring-2 focus:ring-emerald-500"
@@ -264,6 +255,7 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
               <input
                 type="email"
                 name="email"
+                ref={emailRef} // ✅ attach ref
                 required
                 placeholder="example@gmail.com"
                 className="w-full h-14 px-5 border border-gray-300 rounded-full focus:ring-2 focus:ring-emerald-500"
