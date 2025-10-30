@@ -67,7 +67,7 @@ export const Collection = () => {
           className="absolute left-4 top-1/2 -translate-y-1/2 bg-black backdrop-blur-lg p-3 rounded-full shadow-lg text-white opacity-0 group-hover:opacity-100 transition hover:bg-gray-400"
           aria-label="Scroll left"
         >
-          <ChevronLeft className="sm:w-6 sm:h-6 w-24 h-24 " />
+          <ChevronLeft className="sm:w-6 sm:h-6 md:w-16 md:h-16 " />
         </button>
 
         <button
@@ -75,7 +75,7 @@ export const Collection = () => {
           className="absolute right-4 top-1/2 -translate-y-1/2 bg-black backdrop-blur-lg p-3 rounded-full shadow-lg text-white opacity-0 group-hover:opacity-100 transition hover:bg-gray-400 "
           aria-label="Scroll right"
         >
-          <ChevronRight className="sm:w-6 sm:h-6 w-24 h-24 " />
+          <ChevronRight className="sm:w-6 sm:h-6 md:w-16 md:h-16 " />
         </button>
       </div>
     </div>
