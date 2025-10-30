@@ -93,9 +93,13 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
     const form = e.currentTarget;
   
     // ✅ Cast inputs to HTMLInputElement
-    const nameInput = form.elements.namedItem("name") as HTMLInputElement;
-    const emailInput = form.elements.namedItem("email") as HTMLInputElement;
+    const nameInput = form.elements.namedItem("name") as HTMLInputElement | null;
+    const emailInput = form.elements.namedItem("email") as HTMLInputElement | null;
   
+    if (!nameInput || !emailInput) {
+      alert("Form elements not found. Please reload the page and try again.");
+      return;
+    }
     const templateParams = {
       email: emailInput.value, // must match {{email}} in your EmailJS template
       name: nameInput.value,
