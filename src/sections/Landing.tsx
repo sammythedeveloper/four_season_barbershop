@@ -35,10 +35,11 @@ export const Landing = () => {
           className="  text-emerald-300/20 "
           width={696} height={264}
         />
-        <p className="mt-4 text-2xl md:text-3xl font-extrabold text-black uppercase ">
+        <p className="mt-10 text-2xl md:text-3xl font-light text-black uppercase ">
           Experience finest grooming with precision haircuts, fades, shaves, and
           beard trims.
         </p>
+        <div className="my-8 border-b-2 border-purple-500 w-24 mx-auto"></div>
         <div className=" absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
           <div className="size-[120px] hero-ring"></div>
           <div className="size-[120px] hero-ring"></div>
