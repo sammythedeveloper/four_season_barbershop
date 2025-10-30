@@ -1,10 +1,11 @@
 import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
 import type { Metadata } from "next";
+// @ts-ignore
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "season ✂️ Clip",
+  title: "season ✂️ ",
   description: "Elite grooming experience",
   icons: {
     icon: "/barb.svg",

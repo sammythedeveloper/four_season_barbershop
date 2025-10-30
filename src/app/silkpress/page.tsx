@@ -15,10 +15,10 @@ export default function SilkPressPage() {
       ]}
       gallery={[
         { img: "/assets/images/silk1.jpg", title: "Short Hair" },
-        { img: "/assets/images/silk2.jpg", title: "Medium Hair" },
+        { img: "/assets/images/silk5.jpg", title: "Medium Hair" },
         { img: "/assets/images/silk3.jpg", title: "Long Hair" },
         { img: "/assets/images/silk4.jpg", title: "Deep Conditioning" },
-        { img: "/assets/images/silk5.jpg", title: "Blowout" },
+        { img: "/assets/images/silk2.jpg", title: "Blowout" },
         { img: "/assets/images/silk6.jpg", title: "Premium Package" },
       ]}
     />

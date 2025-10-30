@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Link from "next/link";
 import Image from "next/image";
+import { send } from "@emailjs/browser";
 
 interface Service {
   name: string;
@@ -76,6 +77,47 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
       boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
     }),
   };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+    e.preventDefault();
+
+    if (!selectedService || !selectedDate || !selectedTime) {
+      alert("Please select service, date and time!");
+      return;
+    }
+
+    const form = e.currentTarget;
+
+    const templateParams = {
+      email: form.email.value, // ✅ must match {{email}} in your EmailJS template
+      name: form.name.value,
+      service: selectedService.value,
+      date: selectedDate.toISOString().split("T")[0],
+      time: selectedTime.value,
+    };
+    console.log(
+      "ENV:",
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+    );
+    try {
+      await send(serviceID, templateID, templateParams, publicKey)
+        .then((res) => console.log("Email sent", res))
+        .catch((err) => console.error("Email error", err));
+
+      alert("Email sent successfully!");
+      form.reset();
+      setSelectedService(null);
+      setSelectedDate(null);
+      setSelectedTime(null);
+    } catch (err) {
+      console.error(err);
+      alert("Failed to send email. Check your keys and template.");
+    }
+  };
 
   useEffect(() => {
     if (!selectedDate) return;
@@ -100,7 +142,9 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
       const currentMinute = now.getMinutes();
       filteredTimes = filteredTimes.filter((t) => {
         const [hour, minute] = t.value.split(":").map(Number);
-        return hour > currentHour || (hour === currentHour && minute > currentMinute);
+        return (
+          hour > currentHour || (hour === currentHour && minute > currentMinute)
+        );
       });
     }
 
@@ -147,22 +191,37 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
       {/* Booking Form */}
       <div className="min-h-screen flex items-center justify-center py-10 px-4">
         <form
+          onSubmit={handleSubmit}
           action="https://formsubmit.co/millionfitaa@gmail.com"
           method="POST"
           className="w-full max-w-3xl bg-white rounded-3xl shadow-2xl p-10 space-y-8"
         >
-          <input type="hidden" name="selectedService" value={selectedService?.value || ""} />
+          <input
+            type="hidden"
+            name="selectedService"
+            value={selectedService?.value || ""}
+          />
           <input
             type="hidden"
             name="selectedDate"
             value={selectedDate ? selectedDate.toISOString().split("T")[0] : ""}
           />
-          <input type="hidden" name="selectedTime" value={selectedTime?.value || ""} />
-          <input type="hidden" name="_next" value="http://localhost:3000/thank-you" />
+          <input
+            type="hidden"
+            name="selectedTime"
+            value={selectedTime?.value || ""}
+          />
+          <input
+            type="hidden"
+            name="_next"
+            value="http://localhost:3000/thank-you"
+          />
           <input type="hidden" name="_captcha" value="false" />
 
           <div>
-            <label className="block text-gray-700 font-semibold mb-2 text-lg">Select a Service</label>
+            <label className="block text-gray-700 font-semibold mb-2 text-lg">
+              Select a Service
+            </label>
             <Select
               options={serviceOptions}
               value={selectedService}
@@ -174,7 +233,9 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-gray-700 font-semibold mb-2 text-lg">Full Name</label>
+              <label className="block text-gray-700 font-semibold mb-2 text-lg">
+                Full Name
+              </label>
               <input
                 type="text"
                 name="name"
@@ -184,12 +245,14 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-semibold mb-2 text-lg">Phone Number</label>
+              <label className="block text-gray-700 font-semibold mb-2 text-lg">
+                Email
+              </label>
               <input
-                type="tel"
-                name="phone"
+                type="email"
+                name="email"
                 required
-                placeholder="+1 xxx-xxx-xxxx"
+                placeholder="example@gmail.com"
                 className="w-full h-14 px-5 border border-gray-300 rounded-full focus:ring-2 focus:ring-emerald-500"
               />
             </div>
@@ -197,7 +260,9 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-gray-700 font-semibold mb-2 text-lg">Preferred Date</label>
+              <label className="block text-gray-700 font-semibold mb-2 text-lg">
+                Preferred Date
+              </label>
               <DatePicker
                 selected={selectedDate}
                 onChange={(date) => setSelectedDate(date)}
@@ -208,7 +273,9 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-semibold mb-2 text-lg">Preferred Time</label>
+              <label className="block text-gray-700 font-semibold mb-2 text-lg">
+                Preferred Time
+              </label>
               <Select
                 options={timeOptions}
                 value={selectedTime}
@@ -221,10 +288,22 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
           </div>
 
           <div className="flex items-start gap-3">
-            <input type="checkbox" name="consent" required className="mt-2 accent-emerald-500 w-5 h-5" />
+            <input
+              type="checkbox"
+              name="consent"
+              required
+              className="mt-2 accent-emerald-500 w-5 h-5"
+            />
             <label className="text-gray-700 text-sm leading-relaxed">
-              I agree to receive communications. By submitting this form, you agree to our{" "}
-              <Link href="/privacy-policy" className="text-emerald-500 underline">Privacy Policy</Link>.
+              I agree to receive communications. By submitting this form, you
+              agree to our{" "}
+              <Link
+                href="/privacy-policy"
+                className="text-emerald-500 underline"
+              >
+                Privacy Policy
+              </Link>
+              .
             </label>
           </div>
 
