@@ -3,7 +3,7 @@ import { HeroOrbit } from "@/components/Orbit";
 
 export const Landing = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-white relative overflow-hidden ">
+    <section className="min-h-screen flex flex-col items-center justify-center bg-white relative overflow-hidden mt-10 ">
       {/* Grid Background */}
       <div
         className="absolute inset-0 rotate-[75deg] bg-white 

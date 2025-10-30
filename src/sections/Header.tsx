@@ -11,7 +11,7 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-white/60 shadow-md transition-all duration-300">
-      <div className="container mx-auto flex justify-between items-center h-24 md:h-28 px-6 mb-10">
+      <div className="container mx-auto flex justify-between items-center h-24 md:h-28 px-6 mb">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Scissors className="w-10 h-10 text-black hover:rotate-12 transition-transform duration-300" />
