@@ -10,7 +10,7 @@ const cuts = [
   { avatar: "/assets/images/9.jpg" },
   { avatar: "/assets/images/five.jpg" },
   { avatar: "/assets/images/6.jpg" },
-  { avatar: "/assets/images/7.jpg" },
+  { avatar: "/assets/images/braid6.jpg" },
   { avatar: "/assets/images/8.jpg" },
   { avatar: "/assets/images/12.jpg" },
   { avatar: "/assets/images/10.jpg" },
