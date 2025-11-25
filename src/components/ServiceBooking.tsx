@@ -107,10 +107,10 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
 
     try {
       await send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        process.env.SERVICE_ID!,
+        process.env.TEMPLATE_ID!,
         templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        process.env.IDPUBLIC_KEY!
       );
       router.push("/thank-you"); // ✅ navigate after successful booking
       setSelectedService(null);
