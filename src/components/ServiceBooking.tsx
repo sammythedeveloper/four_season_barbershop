@@ -98,7 +98,7 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
     }
 
     const templateParams = {
-      email: emailRef.current.value, // must match {{email}} in EmailJS template
+      email: emailRef.current.value,
       name: nameRef.current.value,
       service: selectedService.value,
       date: selectedDate.toISOString().split("T")[0],
@@ -107,16 +107,19 @@ export const ServiceBooking: React.FC<ServiceBookingProps> = ({
 
     try {
       await send(
-        process.env.SERVICE_ID!,
-        process.env.TEMPLATE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         templateParams,
-        process.env.IDPUBLIC_KEY!
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
-      router.push("/thank-you"); // ✅ navigate after successful booking
+
+      // Clear state
       setSelectedService(null);
       setSelectedDate(null);
       setSelectedTime(null);
-      e.currentTarget.reset();
+
+      // Navigate AFTER clearing state
+      router.push("/thank-you");
     } catch (err) {
       console.error("Email error", err);
       alert("Failed to send email. Check your keys and template.");
